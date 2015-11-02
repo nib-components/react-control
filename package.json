@@ -1,0 +1,25 @@
+{
+  "name": "react-control",
+  "main": "./dist/index.js",
+  "devDependencies": {
+    "babel": "^5.8.29",
+    "babelify": "^6.4.0",
+    "browserify": "^12.0.0",
+    "invariant": "^2.1.2",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0",
+    "sass-composer": "^1.1.7",
+    "watchify": "^3.5.0"
+  },
+  "scripts": {
+    "build": "babel ./index.js ./lib/**/*.jsx -d ./dist --source-maps",
+    "watch": "babel ./index.js ./lib/**/*.jsx -d ./dist --watch --source-maps",
+    "example.build": "browserify -v --debug -t babelify example/index.js -o example/index.bundled.js",
+    "example.watch": "watchify -v --debug -t babelify example/index.js -o example/index.bundled.js",
+    "example.sass.build": "sass-composer index.scss -o example/index.bundled.css",
+    "example.sass.watch": "sass-composer --watch index.scss -o example/index.bundled.css"
+  },
+  "dependencies": {
+    "classnames": "^2.2.0"
+  }
+}

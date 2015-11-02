@@ -1,0 +1,38 @@
+
+.select {
+  position:relative;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0;
+
+  border: 1px solid #ccc;
+  border-radius: .175em;
+  background:#fff;
+}
+
+.select__input {
+  margin: 0;
+  padding: .75em 2em .75em .75em;
+
+  color: #444;
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.25rem;
+
+  border: none;
+  background: transparent;
+  -webkit-appearance: none;
+}
+
+.select:after {
+  position: absolute;
+  top: 1.125em;
+  right: 0.75em;
+  content: '';
+  pointer-events: none;
+  border-top: 8px solid #444;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+}
+
+//TODO: make border white on green form
