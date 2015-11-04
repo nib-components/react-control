@@ -3,13 +3,21 @@ import RadioInput from './RadioInput';
 
 export default class RadioGroup extends React.Component {
 
+  handleBlur(onBlur, value) {
+    onBlur({
+      target: {
+        value
+      }
+    });
+  }
+
   render() {
 
-    let {name, options, ...props} = this.props;
+    let {name, options, onBlur, value: selectedValue, ...props} = this.props;
 
     return <div className="radio-group">
-      {Object.keys(options).map(value => {
-        return <RadioInput key={value} name={name} value={value} label={options[value]}/>;
+      {Object.keys(options).map(optionValue => {
+        return <RadioInput key={optionValue} name={name} value={optionValue} label={options[optionValue]} onBlur={() => {this.handleBlur(onBlur, selectedValue)}}/>;
       })}
     </div>;
 
@@ -19,5 +27,6 @@ export default class RadioGroup extends React.Component {
 
 RadioGroup.propTypes = {
   name: React.PropTypes.string.isRequired,
-  options: React.PropTypes.object.isRequired
+  options: React.PropTypes.object.isRequired,
+  onBlur: React.PropTypes.function
 };
