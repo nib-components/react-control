@@ -1,10 +1,10 @@
+@import "sass-ems";
 
 .select {
   position:relative;
   display: inline-block;
   box-sizing: border-box;
   padding: 0;
-
   border: 1px solid #ccc;
   border-radius: .175em;
   background:#fff;
@@ -12,12 +12,12 @@
 
 .select__input {
   margin: 0;
-  padding: .75em 2em .75em .75em;
+  padding: .5em 2em .5em .5em;
 
-  color: #444;
   font-size: 1rem;
-  font-family: 'Open Sans', sans-serif;
-  line-height: 1.25rem;
+  font-family: $copy-font-family-default;
+  color: $copy-color-default;
+  height: 2.5em;
 
   border: none;
   background: transparent;
@@ -26,7 +26,7 @@
 
 .select:after {
   position: absolute;
-  top: 1.125em;
+  top: (2.5em/2)-(em(8px)/2);
   right: 0.75em;
   content: '';
   pointer-events: none;
