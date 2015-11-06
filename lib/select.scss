@@ -6,13 +6,14 @@
   box-sizing: border-box;
   padding: 0;
   border: 1px solid #ccc;
-  border-radius: .175em;
   background:#fff;
 }
 
 .select__input {
   margin: 0;
   padding: .5em 2em .5em .5em;
+
+  cursor: pointer;
 
   font-size: 1rem;
   font-family: $copy-font-family-default;
