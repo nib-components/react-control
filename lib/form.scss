@@ -1,0 +1,45 @@
+
+/*-------------------------------
+ * Form
+ -------------------------------*/
+
+.form {
+  padding: 2.5em;
+  min-width: 320px;
+  max-width: 600px;
+  box-sizing: border-box;
+}
+
+/*-------------------------------
+ * Form: Light
+ -------------------------------*/
+
+.form--light {
+  border: 1px solid #ccc;
+  color: $copy-color-default;
+}
+
+/*-------------------------------
+ * Form: White
+ -------------------------------*/
+
+.form--white {
+  background-color: #fff;
+}
+
+/*-------------------------------
+ * Form: Grey
+ -------------------------------*/
+
+.form--grey {
+  background-color: #eee;
+}
+
+/*-------------------------------
+ * Form: Elizabeth
+ -------------------------------*/
+
+.form--elizabeth {
+  background-color: #009623;
+  color: #fff;
+}

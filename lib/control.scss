@@ -20,6 +20,10 @@
   color: $copy-color-default;
 }
 
+.form--elizabeth .control__help {
+  color: rgba(255, 255, 255, .9)
+}
+
 /*-------------------------------
  * Control: Input
  -------------------------------*/
@@ -49,6 +53,10 @@
 
 .control--valid .control__alert {
   color: #009623;
+}
+
+.form--elizabeth .control--valid .control__alert--outside {
+  color: #fff;
 }
 
 .control--invalid .control__alert {

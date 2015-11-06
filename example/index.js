@@ -18,23 +18,65 @@ const states = {
 
 ReactDOM.render(
   <div>
+    <div className="form form--light form--white">
 
-    <nib.Control valid={true} label="What's your name" help="We just need your first name.">
+        <nib.Control valid={true} label="What's your name" help="We just need your first name.">
+          <nib.TextInput/>
+        </nib.Control>
+
+        <nib.Control valid={false} label="Are you man or boy?" message="You are not!">
+          <nib.TextInput/>
+        </nib.Control>
+
+        <nib.Control valid={true} label="Are you man or boy?">
+          <nib.RadioGroup name="stature" options={{man: 'Man', boy: 'Boy'}}/>
+        </nib.Control>
+
+        <nib.Control valid={false} label="In what state is your man-palace?">
+          <nib.SelectInput options={states} placeholder="Where do you live?"/>
+        </nib.Control>
+
+    </div>
+
+    <div className="form form--elizabeth">
+
+      <nib.Control valid={false} label="What's your name" help="We just need your first name." message="Just your name!">
+        <nib.TextInput/>
+      </nib.Control>
+
+      <nib.Control valid={true} label="Are you man or boy?">
       <nib.TextInput/>
-    </nib.Control>
+      </nib.Control>
 
-    <nib.Control valid={false} label="Are you man or boy?" message="You are not!">
-      <nib.TextInput/>
-    </nib.Control>
+      <nib.Control valid={true} label="Are you man or boy?">
+        <nib.RadioGroup name="stature" options={{man: 'Man', boy: 'Boy'}}/>
+      </nib.Control>
 
-    <nib.Control valid={false} label="Are you man or boy?">
-      <nib.RadioGroup name="stature" options={{man: 'Man', boy: 'Boy'}}/>
-    </nib.Control>
-
-    <nib.Control valid={false} label="In what state is your man-palace?">
+      <nib.Control valid={false} label="In what state is your man-palace?">
       <nib.SelectInput options={states} placeholder="Where do you live?"/>
-    </nib.Control>
+      </nib.Control>
 
+    </div>
+
+    <div className="form form--light form--grey">
+
+      <nib.Control valid={false} label="What's your name" help="We just need your first name." message="Just your name!">
+        <nib.TextInput/>
+      </nib.Control>
+
+      <nib.Control valid={true} label="Are you man or boy?">
+        <nib.TextInput/>
+      </nib.Control>
+
+      <nib.Control valid={true} label="Are you man or boy?">
+        <nib.RadioGroup name="stature" options={{man: 'Man', boy: 'Boy'}}/>
+      </nib.Control>
+
+      <nib.Control valid={false} label="In what state is your man-palace?">
+        <nib.SelectInput options={states} placeholder="Where do you live?"/>
+      </nib.Control>
+
+    </div>
   </div>,
   document.querySelector('#app')
 );

@@ -3,8 +3,9 @@
 $copy-color-default: #444;
 $copy-font-family-default: 'Open Sans', sans-serif;
 
+@import './lib/Form';
+@import './lib/Control';
 @import './lib/label';
-@import './lib/textbox';
+@import './lib/TextInput';
+@import './lib/SelectInput';
 @import './lib/radio';
-@import './lib/select';
-@import './lib/control';

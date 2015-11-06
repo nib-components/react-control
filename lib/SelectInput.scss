@@ -9,6 +9,13 @@
   background:#fff;
 }
 
+/*-------------------------------
+ * Green Form Theme
+ -------------------------------*/
+.form--elizabeth .select {
+  border: none;
+}
+
 .select__input {
   margin: 0;
   padding: .5em 2em .5em .5em;
@@ -35,5 +42,3 @@
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
 }
-
-//TODO: make border white on green form
