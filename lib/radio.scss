@@ -1,3 +1,6 @@
+/*-------------------------------
+ * Radio Button: Common
+ -------------------------------*/
 
 .radio {
   display: inline-block;
@@ -17,9 +20,21 @@
   }
 }
 
+.radio + .radio {
+  margin-left: 0.2em;
+}
+
+.radio--selected {
+  background-color: #eee;
+}
+
+.radio__input {
+  margin: 0;
+}
+
 
 /*-------------------------------
- * Green Form Theme
+ * Radio: Elizabeth
  -------------------------------*/
 .form--elizabeth .radio {
   background-color: rgba(255, 255, 255, .6);
@@ -33,7 +48,7 @@
 
 
 /*-------------------------------
- * Grey Form Theme
+ * Radio: Grey
  -------------------------------*/
 .form--grey .radio {
   background-color: #eee;
@@ -43,16 +58,3 @@
     background-color: #fff;
   }
 }
-
-.radio + .radio {
-  margin-left: 0.2em;
-}
-
-.radio--selected {
-  background-color: #eee;
-}
-
-.radio__input {
-  margin: 0;
-}
-

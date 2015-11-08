@@ -1,19 +1,23 @@
-.label{
 
+/*-------------------------------
+ * Label: Common
+ -------------------------------*/
+
+.control__label {
   display: block;
-  color: $copy-color-default;
+  margin-top: 1.25em;
   font-family: $copy-font-family-default;
-  line-height: 1.25rem;
-
   font-size: .9rem;
   font-weight: 700;
+  line-height: 1.25rem;
+  color: $copy-color-default;
   text-transform: uppercase;
 }
 
 
 /*-------------------------------
- * Green Form Theme
+ * Label: Elizabeth
  -------------------------------*/
-.form--elizabeth .label {
+.form--elizabeth .control__label {
   color: #fff;
 }

@@ -1,14 +1,6 @@
 @import "sass-ems";
 
 /*-------------------------------
- * Control: Label
- -------------------------------*/
-
-.control__label {
-  margin-top: 1.25em;
-}
-
-/*-------------------------------
  * Control: Help
  -------------------------------*/
 
@@ -20,9 +12,14 @@
   color: $copy-color-default;
 }
 
-.form--elizabeth .control__help {
-  color: rgba(255, 255, 255, .9)
-}
+  /*-------------------------------
+  * Form: Elizabeth
+  -------------------------------*/
+
+  .form--elizabeth .control__help {
+    color: rgba(255, 255, 255, .9)
+  }
+
 
 /*-------------------------------
  * Control: Input
@@ -55,9 +52,12 @@
   color: #009623;
 }
 
-.form--elizabeth .control--valid .control__alert--outside {
-  color: #fff;
-}
+  /*-------------------------------
+  * Form: Elizabeth
+  -------------------------------*/
+  .form--elizabeth .control--valid .control__alert--outside {
+    color: #fff;
+  }
 
 .control--invalid .control__alert {
   color: #a40051;
