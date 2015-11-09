@@ -14,8 +14,6 @@ export default class SelectInput extends React.Component {
     </span>;
   }
 
-
-
 }
 
 SelectInput.propTypes = {

@@ -1,8 +1,10 @@
 import React from 'react';
-import invariant from 'invariant';
 import classNames from 'classnames';
 
 import Control from './Control';
+import TextInput from './TextInput';
+import RadioGroup from './RadioGroup';
+import SelectInput from './SelectInput';
 
 export default class Form extends React.Component {
 
@@ -10,30 +12,33 @@ export default class Form extends React.Component {
 
   }
 
+  maybeRenderTitle(title) {
+    if (this.props.title) {
+      return <h3 className="v2-title v2-title--2">{title}</h3>
+    }
+  }
+
   render() {
+    let {theme, title, ...props} = this.props;
+
+    let formClasses = classNames('form', {
+      'form--elizabeth': theme === "elizabeth",
+      'form--white': theme === "white",
+      'form--grey': theme === "grey"
+    });
+
+
     return (
-      <div className="form form--white">
-
-        <Control valid={true} label="What's your name" help="We just need your first name.">
-          <TextInput/>
-        </Control>
-
-        <hr className="form__divider" />
-
-        <nib.Control valid={false} label="Are you man or boy?" message="You are not!">
-          <nib.TextInput/>
-        </nib.Control>
-
-        <nib.Control valid={true} label="Are you man or boy?">
-          <nib.RadioGroup name="stature" options={{man: 'Man', boy: 'Boy'}}/>
-        </nib.Control>
-
-        <nib.Control valid={false} label="In what state is your man-palace?">
-          <nib.SelectInput options={states} placeholder="Where do you live?"/>
-        </nib.Control>
-
+      <div className={formClasses}>
+        {this.maybeRenderTitle(title)}
+        {this.props.children}
       </div>
     );
   }
 
 }
+
+Form.propTypes = {
+  theme: React.PropTypes.string.isRequired,
+  title: React.PropTypes.string
+};

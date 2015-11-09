@@ -22,6 +22,7 @@
   "dependencies": {
     "classnames": "^2.2.0",
     "sass-ems": "^1.0.3",
-    "@nib-styles/v2-icons": "^2.6.2"
+    "@nib-styles/v2-icons": "^2.6.2",
+    "@nib-styles/v2-typography": "^2.2.0"
   }
 }
