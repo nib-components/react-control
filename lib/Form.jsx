@@ -11,7 +11,7 @@ export default class Form extends React.Component {
   }
 
   render() {
-    return <div className="form form--light form--white" />;
+    return <div className="form form--white" />;
   }
 
 }

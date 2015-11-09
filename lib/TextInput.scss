@@ -8,11 +8,14 @@
   width: 100%;
   border-width: 1px;
   border-style: solid;
-  border-color: #ccc;
+  border-color: rgba(0, 0, 0, .2);
   padding: .5em;
   box-sizing: border-box;
 }
 
+.control--invalid .textbox {
+  background-color: #fcc;
+}
 
 /*-------------------------------
  * Textbox: Elizabeth

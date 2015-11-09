@@ -18,11 +18,13 @@ const states = {
 
 ReactDOM.render(
   <div>
-    <div className="form form--light form--white">
+    <div className="form form--white">
 
         <nib.Control valid={true} label="What's your name" help="We just need your first name.">
           <nib.TextInput/>
         </nib.Control>
+
+        <hr className="form__divider" />
 
         <nib.Control valid={false} label="Are you man or boy?" message="You are not!">
           <nib.TextInput/>
@@ -44,6 +46,8 @@ ReactDOM.render(
         <nib.TextInput/>
       </nib.Control>
 
+      <hr className="form__divider" />
+
       <nib.Control valid={true} label="Are you man or boy?">
       <nib.TextInput/>
       </nib.Control>
@@ -58,11 +62,13 @@ ReactDOM.render(
 
     </div>
 
-    <div className="form form--light form--grey">
+    <div className="form form--grey">
 
       <nib.Control valid={false} label="What's your name" help="We just need your first name." message="Just your name!">
         <nib.TextInput/>
       </nib.Control>
+
+      <hr className="form__divider" />
 
       <nib.Control valid={true} label="Are you man or boy?">
         <nib.TextInput/>

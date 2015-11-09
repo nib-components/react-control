@@ -9,14 +9,11 @@
   box-sizing: border-box;
 }
 
-/*-------------------------------
- * Form: Light
- -------------------------------*/
+/**
+* Media Queries from sass-grid? To reduce padding on form to 1.25 by default, then 2.5 for larger.
+* More complex as
+*/
 
-.form--light {
-  border: 1px solid #ccc;
-  color: $copy-color-default;
-}
 
 /*-------------------------------
  * Form: White
@@ -24,6 +21,8 @@
 
 .form--white {
   background-color: #fff;
+  border: 1px solid hsla(0, 0, 0, .2);
+  color: $copy-color-default;
 }
 
 /*-------------------------------
@@ -32,6 +31,8 @@
 
 .form--grey {
   background-color: #eee;
+  border: 1px solid hsla(0, 0, 0, .2);
+  color: $copy-color-default;
 }
 
 /*-------------------------------

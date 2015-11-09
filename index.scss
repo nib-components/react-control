@@ -5,7 +5,18 @@ $copy-font-family-default: 'Open Sans', sans-serif;
 
 @import './lib/Form';
 @import './lib/Control';
+@import './lib/Divider';
 @import './lib/label';
 @import './lib/TextInput';
 @import './lib/SelectInput';
 @import './lib/radio';
+
+body {
+  margin: 0;
+}
+
+@media (min-width:768px) {
+  body {
+    margin: 5em;
+  }
+}
