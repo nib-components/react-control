@@ -4,8 +4,6 @@
   position:relative;
   display: inline-block;
   box-sizing: border-box;
-  padding: 0;
-  background:#fff;
 }
 
 .select__input {
@@ -21,8 +19,17 @@
 
   border: 1px solid rgba(0, 0, 0, .2);
   background: transparent;
+  -moz-appearance: none;
   -webkit-appearance: none;
+  border-radius: 0;
 }
+
+     /*-------------------------------
+     * IE FIX: Hide select arrow
+     -------------------------------*/
+      .select__input::-ms-expand {
+        display: none;
+      }
 
   /*-------------------------------
      * Select: Elizabeth

@@ -11,6 +11,8 @@
   border-color: rgba(0, 0, 0, .2);
   padding: .5em;
   box-sizing: border-box;
+  -webkit-appearance: none;
+  border-radius: 0;
 }
 
 .control--invalid .textbox {
