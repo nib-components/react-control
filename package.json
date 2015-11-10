@@ -17,7 +17,9 @@
     "example.build": "browserify -v --debug -t babelify example/index.js -o example/index.bundled.js",
     "example.watch": "watchify -v --debug -t babelify example/index.js -o example/index.bundled.js",
     "example.sass.build": "sass-composer index.scss -o example/index.bundled.css",
-    "example.sass.watch": "sass-composer --watch index.scss -o example/index.bundled.css"
+    "example.sass.watch": "sass-composer --watch index.scss -o example/index.bundled.css",
+	"build.all": "npm run build && npm run example.build && npm run example.sass.build",
+	"deploy": "npm run build.all && firebase deploy"
   },
   "dependencies": {
     "classnames": "^2.2.0",
