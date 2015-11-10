@@ -2,9 +2,6 @@ import React from 'react';
 import classNames from 'classnames';
 
 import Control from './Control';
-import TextInput from './TextInput';
-import RadioGroup from './RadioGroup';
-import SelectInput from './SelectInput';
 
 export default class Form extends React.Component {
 
@@ -14,8 +11,18 @@ export default class Form extends React.Component {
 
   maybeRenderTitle(title) {
     if (this.props.title) {
-      return <h3 className="v2-title v2-title--2">{title}</h3>
+      return <h3 className="v2-title v2-title--2 form__title">{title}</h3>
     }
+  }
+
+  wrapChildren(children) {
+    return React.Children.map(children, function(child) {
+      if (child.type === Control) {
+        return <div className="form__control">{child}</div>;
+      } else {
+        return child;
+      }
+    });
   }
 
   render() {
@@ -31,7 +38,7 @@ export default class Form extends React.Component {
     return (
       <div className={formClasses}>
         {this.maybeRenderTitle(title)}
-        {this.props.children}
+        {this.wrapChildren(this.props.children)}
       </div>
     );
   }

@@ -21,23 +21,27 @@ ReactDOM.render(
 
     <Form theme="white" title="A React Form">
 
-        <Form.Control valid={true} label="What's your name" help="We just need your first name.">
-          <Form.TextInput/>
-        </Form.Control>
+      <Form.Control valid={true} label="What's your name" help="We just need your first name.">
+        <Form.TextInput/>
+      </Form.Control>
 
-        <Form.Divider />
+      <Form.Divider />
 
-        <Form.Control valid={false} label="Are you man or boy?" message="You are not!">
-          <Form.TextInput/>
-        </Form.Control>
+      <Form.Control valid={false} label="Are you man or boy?" message="You are not!">
+        <Form.TextInput/>
+      </Form.Control>
 
-        <Form.Control valid={true} label="Are you man or boy?">
-          <Form.RadioGroup name="stature" options={{man: 'Man', boy: 'Boy'}}/>
-        </Form.Control>
+      <Form.Control valid={true} label="Are you man or boy?">
+        <Form.RadioGroup name="stature" options={{man: 'Man', boy: 'Boy'}}/>
+      </Form.Control>
 
-        <Form.Control valid={false} label="In what state is your man-palace?">
-          <Form.SelectInput options={states} placeholder="Where do you live?"/>
-        </Form.Control>
+      <Form.Control valid={false} label="In what state is your man-palace?">
+        <Form.SelectInput options={states} placeholder="Where do you live?"/>
+      </Form.Control>
+
+      <button className="v2-button v2-button--primary v2-button--icon-on-right" href="">
+        Button <i className="v2-icon v2-icon--smallest v2-icon--chevron-circle-inverse v2-icon--offset-descenders"></i>
+      </button>
 
     </Form>
 
@@ -50,7 +54,7 @@ ReactDOM.render(
       <Form.Divider />
 
       <Form.Control valid={true} label="Are you man or boy?">
-      <Form.TextInput/>
+        <Form.TextInput/>
       </Form.Control>
 
       <Form.Control valid={true} label="Are you man or boy?">
@@ -58,8 +62,12 @@ ReactDOM.render(
       </Form.Control>
 
       <Form.Control valid={false} label="In what state is your man-palace?">
-      <Form.SelectInput options={states} placeholder="Where do you live?"/>
+        <Form.SelectInput options={states} placeholder="Where do you live?"/>
       </Form.Control>
+
+      <button className="v2-button v2-button--primary v2-button--icon-on-right" href="">
+        Another button <i className="v2-icon v2-icon--smallest v2-icon--chevron-circle-inverse v2-icon--offset-descenders"></i>
+      </button>
 
     </Form>
 

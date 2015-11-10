@@ -3,16 +3,19 @@
  -------------------------------*/
 
 .form {
-  padding: 2.5em;
+  padding: 1.25em;
   min-width: 320px;
   max-width: 600px;
   box-sizing: border-box;
+
+  @include breakpoint('sm') {
+    padding: 2.5rem;
+  }
 }
 
-/**
-* Media Queries from sass-grid? To reduce padding on form to 1.25 by default, then 2.5 for larger.
-* More complex as
-*/
+.form__title {
+  margin-bottom: 2rem;
+}
 
 
 /*-------------------------------

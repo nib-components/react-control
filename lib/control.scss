@@ -4,8 +4,16 @@
  * Control: Help
  -------------------------------*/
 
+.form__control {
+  margin-bottom: 2rem;
+}
+
+/*-------------------------------
+ * Control: Help
+ -------------------------------*/
+
 .control__help {
-  margin:.25em 0 0 0;
+  margin: .25em 0 0 0;
   font-size: .85rem;
   font-style: italic;
   font-family: $copy-font-family-default;
