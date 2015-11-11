@@ -13,10 +13,10 @@ export default class Control extends React.Component {
   }
 
   render() {
-    let {valid, label, help, children: input, message, ...props} = this.props;
+    let {valid, label, help, children: component, message, ...props} = this.props;
 
     invariant(
-      React.Children.count(this.props.children) === 1,
+      React.Children.count(component) === 1,
       'A control must have a single input.'
     );
 
@@ -27,13 +27,13 @@ export default class Control extends React.Component {
 
     //noinspection Eslint
     let controlInputClasses = classNames('control__input', {
-      'control__input--shrink': input && (input.type === RadioGroup || input.type === Select)
+      'control__input--shrink': component && (component.type === RadioGroup || component.type === Select)
     });
 
     let controlAlertClasses = classNames('control__alert', 'v2-icon', 'v2-icon--smallest', {
       'v2-icon--tick': valid,
       'v2-icon--warning-inverse': !valid,
-      'control__alert--outside': input && (input.type === RadioGroup || input.type === Select),
+      'control__alert--outside': component && (component.type === RadioGroup || component.type === Select),
     });
 
     return <div className={controlClasses}>
@@ -44,23 +44,23 @@ export default class Control extends React.Component {
 
       {help ?
         <span className="control__help">{help}</span> :
-        ''
+        null
       }
 
       <div className={controlInputClasses}>
-        {input ?
-          React.cloneElement(input, props) :
-          ''
+        {component ?
+          React.cloneElement(component, props) :
+          null
         }
-        {input ?
+        {component ?
           <i className={controlAlertClasses}></i> :
-          ''
+          null
         }
       </div>
 
       {message ?
         <div className="control__message">{message}</div> :
-        ''
+        null
       }
 
     </div>;

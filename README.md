@@ -8,12 +8,50 @@ Components for creating `React` based forms at `nib`.
 
 ## Usage
 
-    import Form from '@nib-components/react-form';
+```javascript
 
-    <Form title="A React form">
+import Form from '@nib-components/react-form';
 
-      <Form.Control valid={true} label="What's your name" help="Please ust need your first name.">
-        <Form.Text/>
-      </Form.Control>
+<Form title="A React form">
 
-    </Form>
+  <Form.Control valid={true} label="What's your name" help="Please enter your first name.">
+    <Form.Text/>
+  </Form.Control>
+
+</Form>
+```
+
+## Components
+
+### Form
+
+A form component - provides form markup and behaviour.
+
+```
+<Form></Form>
+```
+
+#### Props
+
+- theme - The form theme (`white`, `grey` or `green`)
+- title - The form title displayed to the user
+- onSubmit - The form submission handler
+
+### Control
+
+A control component - provides control markup and behaviour.
+
+```
+<Control></Control>
+```
+
+
+### Text
+
+### Select
+
+### Radio
+
+### RadioGroup
+
+### Divider

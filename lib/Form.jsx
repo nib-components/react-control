@@ -1,51 +1,62 @@
 import React from 'react';
 import classNames from 'classnames';
-
 import Control from './control/Control';
 
 export default class Form extends React.Component {
 
-  componentWillMount() {
-
+  constructor(props, ...args) {
+    super(props, ...args);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  maybeRenderTitle(title) {
-    if (this.props.title) {
-      return <h3 className="v2-title v2-title--2 form__title">{title}</h3>
+  handleSubmit(event) {
+    event.preventDefault();
+    this.props.onSubmit();
+  }
+
+  renderTitle(title) {
+    if (title) {
+      return <h3 className="form__title v2-title v2-title--2 form__title">{title}</h3>
     }
+    return null;
   }
 
-  wrapChildren(children) {
+  renderChildren(children) {
     return React.Children.map(children, function(child) {
       if (child.type === Control) {
         return <div className="form__control">{child}</div>;
-      } else {
-        return child;
       }
+      return child;
     });
   }
 
   render() {
-    let {theme, title, ...props} = this.props;
+    const {theme, title, children} = this.props;
 
-    let formClasses = classNames('form', {
-      'form--elizabeth': theme === "elizabeth",
-      'form--white': theme === "white",
-      'form--grey': theme === "grey"
+    const formClassNames = classNames('form', {
+      'form--elizabeth': theme === 'green',
+      'form--white': theme === 'white',
+      'form--grey': theme === 'grey'
     });
 
-
     return (
-      <div className={formClasses}>
-        {this.maybeRenderTitle(title)}
-        {this.wrapChildren(this.props.children)}
-      </div>
+      <form className={formClassNames} onSubmit={this.handleSubmit}>
+        {this.renderTitle(title)}
+        {this.renderChildren(children)}
+      </form>
     );
   }
 
 }
 
 Form.propTypes = {
-  theme: React.PropTypes.string.isRequired,
-  title: React.PropTypes.string
+  theme: React.PropTypes.oneOf(['white', 'grey', 'green']),
+  title: React.PropTypes.string,
+  onSubmit: React.PropTypes.func
+};
+
+Form.defaultProps = {
+  theme: 'white',
+  title: '',
+  onSubmit: () => {}
 };
