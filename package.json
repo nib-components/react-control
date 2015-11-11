@@ -13,14 +13,16 @@
     "watchify": "^3.5.0"
   },
   "scripts": {
+    "lint": "eslint -c jameslnewell/react lib/**/*.jsx",
     "build": "babel ./index.js ./lib/*.jsx ./lib/**/*.jsx -d ./dist --source-maps",
     "watch": "babel ./index.js ./lib/*.jsx ./lib/**/*.jsx -d ./dist --watch --source-maps",
-    "example.build": "browserify -v --debug -t babelify example/index.js -o example/index.bundled.js",
-    "example.watch": "watchify -v --debug -t babelify example/index.js -o example/index.bundled.js",
-    "example.sass.build": "sass-composer index.scss -o example/index.bundled.css",
-    "example.sass.watch": "sass-composer --watch index.scss -o example/index.bundled.css",
-	"build.all": "npm run build && npm run example.build && npm run example.sass.build",
-	"deploy": "npm run build.all && firebase deploy"
+    "example.js.build": "browserify -v --debug -t babelify example/index.js -o example/index.bundled.js",
+    "example.js.watch": "watchify -v --debug -t babelify example/index.js -o example/index.bundled.js",
+    "example.css.build": "sass-composer index.scss -o example/index.bundled.css",
+    "example.css.watch": "sass-composer --watch index.scss -o example/index.bundled.css",
+	  "example.build": "npm run build && npm run example.js.build && npm run example.css.build",
+	  "example.watch": "npm run watch && npm run example.js.watch && npm run example.css.watch",
+	  "deploy": "npm run example.build && firebase deploy"
   },
   "dependencies": {
     "classnames": "^2.2.0",
