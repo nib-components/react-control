@@ -1,5 +1,5 @@
 {
-  "name": "react-control",
+  "name": "react-form",
   "main": "./dist/index.js",
   "devDependencies": {
     "babel": "^5.8.29",
