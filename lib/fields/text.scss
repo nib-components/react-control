@@ -11,13 +11,20 @@
   border-color: rgba(0, 0, 0, .2);
   padding: .5em;
   box-sizing: border-box;
-  -webkit-appearance: none;
   border-radius: 0;
+  -webkit-appearance: none;
 }
 
 .control--invalid .textbox {
   background-color: #fcc;
 }
+
+/*-------------------------------
+ * IE FIX: Hide clear field icon
+ * as it overlaps validation icon
+ -------------------------------*/
+.textbox::-ms-clear { display: none; }
+
 
 /*-------------------------------
  * Textbox: Elizabeth
