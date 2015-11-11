@@ -1,5 +1,6 @@
 {
   "name": "react-form",
+  "version": "0.0.1",
   "main": "./dist/index.js",
   "devDependencies": {
     "babel": "^5.8.29",
