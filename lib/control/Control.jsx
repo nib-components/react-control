@@ -69,7 +69,13 @@ export default class Control extends React.Component {
 }
 
 Control.propTypes = {
-  valid: React.PropTypes.bool.isRequired,
   label: React.PropTypes.string.isRequired,
+  valid: React.PropTypes.bool,
   message: React.PropTypes.string
+};
+
+Control.defaultProps = {
+  label: '',
+  valid: false,
+  message: null
 };

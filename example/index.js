@@ -27,7 +27,7 @@ ReactDOM.render(
 
       <Form.Divider />
 
-      <Form.Control valid={false} label="Are you man or boy?" message="You are not!">
+      <Form.Control label="Are you man or boy?" message="You are not!">
         <Form.Text/>
       </Form.Control>
 
@@ -35,7 +35,7 @@ ReactDOM.render(
         <Form.RadioGroup name="stature" options={{man: 'Man', boy: 'Boy'}}/>
       </Form.Control>
 
-      <Form.Control valid={false} label="In what state is your man-palace?">
+      <Form.Control label="In what state is your man-palace?">
         <Form.Select options={states} placeholder="Where do you live?"/>
       </Form.Control>
 
@@ -47,7 +47,7 @@ ReactDOM.render(
 
     <Form theme="green" title="And a Green One!">
 
-      <Form.Control valid={false} label="What's your name" help="We just need your first name." message="Just your name!">
+      <Form.Control label="What's your name" help="We just need your first name." message="Just your name!">
         <Form.Text/>
       </Form.Control>
 
@@ -61,7 +61,7 @@ ReactDOM.render(
         <Form.RadioGroup name="stature" options={{man: 'Man', boy: 'Boy'}}/>
       </Form.Control>
 
-      <Form.Control valid={false} label="In what state is your man-palace?">
+      <Form.Control label="In what state is your man-palace?" valid={true}>
         <Form.Select options={states} placeholder="Where do you live?"/>
       </Form.Control>
 
@@ -73,7 +73,7 @@ ReactDOM.render(
 
     <Form theme="grey">
 
-      <Form.Control valid={false} label="What's your name" help="We just need your first name." message="Just your name!">
+      <Form.Control label="What's your name" help="We just need your first name." message="Just your name!">
         <Form.Text/>
       </Form.Control>
 
@@ -87,7 +87,7 @@ ReactDOM.render(
         <Form.RadioGroup name="stature" options={{man: 'Man', boy: 'Boy'}}/>
       </Form.Control>
 
-      <Form.Control valid={false} label="In what state is your man-palace?">
+      <Form.Control label="In what state is your man-palace?" valid={true}>
         <Form.Select options={states} placeholder="Where do you live?"/>
       </Form.Control>
 

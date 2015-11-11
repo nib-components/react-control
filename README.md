@@ -33,9 +33,9 @@ A form component - provides form markup and behaviour.
 
 #### Props
 
-- theme - The form theme (`white`, `grey` or `green`)
-- title - The form title displayed to the user
-- onSubmit - The form submission handler
+- title - A title displayed to the user
+- theme - A theme name - `white`, `grey` or `green` - defaults to `white`
+- onSubmit - A function for doing stuff when the form is submitted
 
 ### Control
 
@@ -45,6 +45,11 @@ A control component - provides control markup and behaviour.
 <Control></Control>
 ```
 
+#### Props
+
+- label - A label displayed to the user
+- valid - Whether the control is valid
+- message - A message displayed to the user
 
 ### Text
 
