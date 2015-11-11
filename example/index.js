@@ -22,13 +22,13 @@ ReactDOM.render(
     <Form theme="white" title="A React Form">
 
       <Form.Control valid={true} label="What's your name" help="We just need your first name.">
-        <Form.TextInput/>
+        <Form.Text/>
       </Form.Control>
 
       <Form.Divider />
 
       <Form.Control valid={false} label="Are you man or boy?" message="You are not!">
-        <Form.TextInput/>
+        <Form.Text/>
       </Form.Control>
 
       <Form.Control valid={true} label="Are you man or boy?">
@@ -36,7 +36,7 @@ ReactDOM.render(
       </Form.Control>
 
       <Form.Control valid={false} label="In what state is your man-palace?">
-        <Form.SelectInput options={states} placeholder="Where do you live?"/>
+        <Form.Select options={states} placeholder="Where do you live?"/>
       </Form.Control>
 
       <button className="v2-button v2-button--primary v2-button--icon-on-right" href="">
@@ -48,13 +48,13 @@ ReactDOM.render(
     <Form theme="elizabeth" title="And a Green One!">
 
       <Form.Control valid={false} label="What's your name" help="We just need your first name." message="Just your name!">
-        <Form.TextInput/>
+        <Form.Text/>
       </Form.Control>
 
       <Form.Divider />
 
       <Form.Control valid={true} label="Are you man or boy?">
-        <Form.TextInput/>
+        <Form.Text/>
       </Form.Control>
 
       <Form.Control valid={true} label="Are you man or boy?">
@@ -62,7 +62,7 @@ ReactDOM.render(
       </Form.Control>
 
       <Form.Control valid={false} label="In what state is your man-palace?">
-        <Form.SelectInput options={states} placeholder="Where do you live?"/>
+        <Form.Select options={states} placeholder="Where do you live?"/>
       </Form.Control>
 
       <button className="v2-button v2-button--primary v2-button--icon-on-right" href="">
@@ -74,13 +74,13 @@ ReactDOM.render(
     <Form theme="grey">
 
       <Form.Control valid={false} label="What's your name" help="We just need your first name." message="Just your name!">
-        <Form.TextInput/>
+        <Form.Text/>
       </Form.Control>
 
       <Form.Divider />
 
       <Form.Control valid={true} label="Are you man or boy?">
-        <Form.TextInput/>
+        <Form.Text/>
       </Form.Control>
 
       <Form.Control valid={true} label="Are you man or boy?">
@@ -88,7 +88,7 @@ ReactDOM.render(
       </Form.Control>
 
       <Form.Control valid={false} label="In what state is your man-palace?">
-        <Form.SelectInput options={states} placeholder="Where do you live?"/>
+        <Form.Select options={states} placeholder="Where do you live?"/>
       </Form.Control>
 
     </Form>

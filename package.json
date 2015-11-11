@@ -13,8 +13,8 @@
     "watchify": "^3.5.0"
   },
   "scripts": {
-    "build": "babel ./index.js ./lib/**/*.jsx -d ./dist --source-maps",
-    "watch": "babel ./index.js ./lib/**/*.jsx -d ./dist --watch --source-maps",
+    "build": "babel ./index.js ./lib/*.jsx ./lib/**/*.jsx -d ./dist --source-maps",
+    "watch": "babel ./index.js ./lib/*.jsx ./lib/**/*.jsx -d ./dist --watch --source-maps",
     "example.build": "browserify -v --debug -t babelify example/index.js -o example/index.bundled.js",
     "example.watch": "watchify -v --debug -t babelify example/index.js -o example/index.bundled.js",
     "example.sass.build": "sass-composer index.scss -o example/index.bundled.css",

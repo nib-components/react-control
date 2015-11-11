@@ -1,5 +1,5 @@
 import React from 'react';
-import RadioInput from './RadioInput';
+import RadioInput from './Radio';
 
 export default class RadioGroup extends React.Component {
 
@@ -25,8 +25,12 @@ export default class RadioGroup extends React.Component {
 
 }
 
+RadioGroup.defaultProps = {
+  onBlur: function() {}
+};
+
 RadioGroup.propTypes = {
   name: React.PropTypes.string.isRequired,
   options: React.PropTypes.object.isRequired,
-  onBlur: React.PropTypes.function
+  onBlur: React.PropTypes.func
 };

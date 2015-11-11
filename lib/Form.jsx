@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import Control from './Control';
+import Control from './control/Control';
 
 export default class Form extends React.Component {
 

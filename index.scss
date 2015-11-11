@@ -6,10 +6,10 @@
 $copy-color-default: #444;
 $copy-font-family-default: 'Open Sans', sans-serif;
 
-@import './lib/Form';
-@import './lib/Control';
-@import './lib/Divider';
+@import './lib/form';
 @import './lib/label';
-@import './lib/TextInput';
-@import './lib/SelectInput';
-@import './lib/radio';
+@import './lib/control/control';
+@import './lib/fields/text';
+@import './lib/fields/select';
+@import './lib/fields/radio';
+@import './lib/divider';

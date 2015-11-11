@@ -2,9 +2,9 @@ import React from 'react';
 import invariant from 'invariant';
 import classNames from 'classnames';
 
-import TextInput from './TextInput';
-import RadioGroup from './RadioGroup';
-import SelectInput from './SelectInput';
+import Text from '../fields/Text';
+import Select from './../fields/Select';
+import RadioGroup from '../fields/RadioGroup';
 
 export default class Control extends React.Component {
 
@@ -25,14 +25,15 @@ export default class Control extends React.Component {
       'control--invalid': !valid
     });
 
+    //noinspection Eslint
     let controlInputClasses = classNames('control__input', {
-      'control__input--shrink': input && (input.type === RadioGroup || input.type === SelectInput)
+      'control__input--shrink': input && (input.type === RadioGroup || input.type === Select)
     });
 
     let controlAlertClasses = classNames('control__alert', 'v2-icon', 'v2-icon--smallest', {
       'v2-icon--tick': valid,
       'v2-icon--warning-inverse': !valid,
-      'control__alert--outside': input && (input.type === RadioGroup || input.type === SelectInput),
+      'control__alert--outside': input && (input.type === RadioGroup || input.type === Select),
     });
 
     return <div className={controlClasses}>
@@ -43,23 +44,23 @@ export default class Control extends React.Component {
 
       {help ?
         <span className="control__help">{help}</span> :
-        null
+        ''
       }
 
       <div className={controlInputClasses}>
         {input ?
           React.cloneElement(input, props) :
-          null
+          ''
         }
         {input ?
           <i className={controlAlertClasses}></i> :
-          null
+          ''
         }
       </div>
 
       {message ?
         <div className="control__message">{message}</div> :
-        null
+        ''
       }
 
     </div>;
