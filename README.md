@@ -31,7 +31,7 @@ A form component - provides form markup and behaviour.
 <Form></Form>
 ```
 
-#### Props
+#### Properties
 
 - title - A title displayed to the user
 - theme - A theme name - `white`, `grey` or `green` - defaults to `white`
@@ -42,11 +42,12 @@ A form component - provides form markup and behaviour.
 A control component - provides control markup and behaviour.
 
 ```
-<Control></Control>
+<Form.Control></Form.Control>
 ```
 
-#### Props
+#### Properties
 
+- name - A name used by the browser
 - label - A label displayed to the user
 - valid - Whether the control is valid
 - message - A message displayed to the user

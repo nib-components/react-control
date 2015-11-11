@@ -13,7 +13,7 @@ export default class Control extends React.Component {
   }
 
   render() {
-    let {valid, label, help, children: component, message, ...props} = this.props;
+    let {valid, label, help, children: component, message, touched, ...props} = this.props;
 
     invariant(
       React.Children.count(component) === 1,
@@ -21,8 +21,8 @@ export default class Control extends React.Component {
     );
 
     let controlClasses = classNames('control', {
-      'control--valid': valid,
-      'control--invalid': !valid
+      'control--valid': valid && touched,
+      'control--invalid': !valid && touched
     });
 
     //noinspection Eslint
@@ -31,8 +31,8 @@ export default class Control extends React.Component {
     });
 
     let controlAlertClasses = classNames('control__alert', 'v2-icon', 'v2-icon--smallest', {
-      'v2-icon--tick': valid,
-      'v2-icon--warning-inverse': !valid,
+      'v2-icon--tick': valid && touched,
+      'v2-icon--warning-inverse': !valid && touched,
       'control__alert--outside': component && (component.type === RadioGroup || component.type === Select),
     });
 
@@ -52,7 +52,7 @@ export default class Control extends React.Component {
           React.cloneElement(component, props) :
           null
         }
-        {component ?
+        {component && touched ?
           <i className={controlAlertClasses}></i> :
           null
         }
@@ -69,12 +69,14 @@ export default class Control extends React.Component {
 }
 
 Control.propTypes = {
+  name: React.PropTypes.string.isRequired,
   label: React.PropTypes.string.isRequired,
   valid: React.PropTypes.bool,
   message: React.PropTypes.string
 };
 
 Control.defaultProps = {
+  name: '',
   label: '',
   valid: false,
   message: null

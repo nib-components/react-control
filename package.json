@@ -1,6 +1,6 @@
 {
   "name": "@nib-components/react-form",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "main": "./dist/index.js",
   "devDependencies": {
     "babel": "^5.8.29",
