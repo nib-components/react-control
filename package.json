@@ -9,7 +9,7 @@
     "invariant": "^2.1.2",
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
-    "sass-composer": "^2.0.0-beta9",
+    "sass-composer": "^2.0.0-beta12",
     "watchify": "^3.5.0"
   },
   "scripts": {
