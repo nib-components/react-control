@@ -59,7 +59,9 @@ export default class Control extends React.Component {
       </div>
 
       {message ?
-        <div className="control__message">{message}</div> :
+        <div className="control__message">
+          <p className="control__message-text">{message}</p>
+        </div> :
         null
       }
 

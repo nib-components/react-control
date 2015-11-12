@@ -76,9 +76,27 @@
  -------------------------------*/
 
 .control__message {
+  max-height: 0;
+  overflow: hidden;
+  background-color: #a40051;
+}
+
+.control--invalid .control__message {
+  max-height: 80px;
+}
+
+.control__message {
+  transition: max-height 0.5s;
+}
+
+.no-csstransitions .control__message {
+  transition: none;
+}
+
+.control__message-text {
+  margin: 0;
   padding: 0.75em;
   color: #fff;
   font-size: .85rem;
   font-family: 'Open Sans', sans-serif;
-  background-color: #a40051;
 }

@@ -58,7 +58,7 @@ ReactDOM.render(
       </Form.Control>
 
       <Form.Control valid={true} label="Are you man or boy?">
-        <Form.RadioGroup name="stature" options={{man: 'Man', boy: 'Boy'}}/>
+        <Form.RadioGroup name="different" options={{man: 'Man', boy: 'Boy'}}/>
       </Form.Control>
 
       <Form.Control label="In what state is your man-palace?" valid={true}>
@@ -84,7 +84,7 @@ ReactDOM.render(
       </Form.Control>
 
       <Form.Control valid={true} label="Are you man or boy?">
-        <Form.RadioGroup name="stature" options={{man: 'Man', boy: 'Boy'}}/>
+        <Form.RadioGroup name="blah" options={{man: 'Man', boy: 'Boy'}}/>
       </Form.Control>
 
       <Form.Control label="In what state is your man-palace?" valid={true}>

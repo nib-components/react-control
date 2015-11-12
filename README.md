@@ -55,8 +55,16 @@ A control component - provides control markup and behaviour.
 
 ### Select
 
+A select box.
+
 ### Radio
 
 ### RadioGroup
 
 ### Divider
+
+A horizontal rule.
+
+```
+<Divider />
+```
