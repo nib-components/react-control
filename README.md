@@ -49,7 +49,7 @@ A control component - provides control markup and behaviour.
 
 - label - A label displayed to the user
 - valid - Whether the control is valid
-- message - A message displayed to the user
+- error - An error displayed to the user
 
 ### Text
 
