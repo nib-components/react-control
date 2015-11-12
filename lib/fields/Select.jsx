@@ -17,6 +17,6 @@ export default class SelectInput extends React.Component {
 }
 
 SelectInput.propTypes = {
-  prompt: React.PropTypes.string,
+  placeholder: React.PropTypes.string,
   options: React.PropTypes.object.isRequired
 };

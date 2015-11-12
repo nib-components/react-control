@@ -7,6 +7,7 @@ const options = [
 ];
 
 const states = {
+  '': 'placeholder',
   act: 'Australian Capital Territory',
   nt: 'Northern Territory',
   nsw: 'New South Wales',
@@ -21,7 +22,7 @@ ReactDOM.render(
 
     <Form theme="white" title="A React Form">
 
-      <Form.Control valid={true} label="What's your name" help="We just need your first name.">
+      <Form.Control valid label="What's your name" help="We just need your first name.">
         <Form.Text/>
       </Form.Control>
 
@@ -31,7 +32,7 @@ ReactDOM.render(
         <Form.Text/>
       </Form.Control>
 
-      <Form.Control valid={true} label="Are you man or boy?">
+      <Form.Control valid label="Are you man or boy?">
         <Form.RadioGroup name="stature" options={{man: 'Man', boy: 'Boy'}}/>
       </Form.Control>
 
@@ -53,15 +54,15 @@ ReactDOM.render(
 
       <Form.Divider />
 
-      <Form.Control valid={true} label="Are you man or boy?">
+      <Form.Control valid label="Are you man or boy?">
         <Form.Text/>
       </Form.Control>
 
-      <Form.Control valid={true} label="Are you man or boy?">
+      <Form.Control valid label="Are you man or boy?">
         <Form.RadioGroup name="different" options={{man: 'Man', boy: 'Boy'}}/>
       </Form.Control>
 
-      <Form.Control label="In what state is your man-palace?" valid={true}>
+      <Form.Control label="In what state is your man-palace?" valid>
         <Form.Select options={states} placeholder="Where do you live?"/>
       </Form.Control>
 
@@ -79,15 +80,15 @@ ReactDOM.render(
 
       <Form.Divider />
 
-      <Form.Control valid={true} label="Are you man or boy?">
+      <Form.Control valid label="Are you man or boy?">
         <Form.Text/>
       </Form.Control>
 
-      <Form.Control valid={true} label="Are you man or boy?">
+      <Form.Control valid label="Are you man or boy?">
         <Form.RadioGroup name="blah" options={{man: 'Man', boy: 'Boy'}}/>
       </Form.Control>
 
-      <Form.Control label="In what state is your man-palace?" valid={true}>
+      <Form.Control label="In what state is your man-palace?" valid>
         <Form.Select options={states} placeholder="Where do you live?"/>
       </Form.Control>
 
