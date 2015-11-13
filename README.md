@@ -94,7 +94,6 @@ A select box.
 
 - name - A unique name *(required)*
 - options - An object of `value: "Displayed Text"` pairs *(required)*
-- onBlur
 
 ### Divider
 
