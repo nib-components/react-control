@@ -32,7 +32,7 @@ ReactDOM.render(
       </Form.Control>
 
       <Form.Control valid validated label="Are you man or boy?">
-        <Form.RadioGroup name="stature" options={{man: 'Man', boy: 'Boy'}}/>
+        <Form.RadioGroup name="stature" options={{man: 'Man', boy: 'Boy'}} onChange={event => console.log('change' ,event.target.value)} onBlur={event => console.log('blur', event.target.value)}/>
       </Form.Control>
 
       <Form.Control label="In what state is your man-palace?">
