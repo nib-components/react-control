@@ -7,6 +7,7 @@ export default class SelectInput extends React.Component {
 
     return <span className="select">
       <select className="select__input" {...props}>
+        <option>{placeholder}</option>
         {Object.keys(options).map(value => {
           return <option className="select__option" key={value} value={value}>{options[value]}</option>;
         })}

@@ -7,7 +7,6 @@ const options = [
 ];
 
 const states = {
-  '': 'placeholder',
   act: 'Australian Capital Territory',
   nt: 'Northern Territory',
   nsw: 'New South Wales',
