@@ -7,6 +7,7 @@ const options = [
 ];
 
 const states = {
+  '': 'placeholder',
   act: 'Australian Capital Territory',
   nt: 'Northern Territory',
   nsw: 'New South Wales',
@@ -21,7 +22,7 @@ ReactDOM.render(
 
     <Form theme="white" title="A React Form">
 
-      <Form.Control label="What's your name" help="We just need your first name.">
+      <Form.Control valid label="What's your name" help="We just need your first name.">
         <Form.Text/>
       </Form.Control>
 
