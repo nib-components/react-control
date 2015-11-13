@@ -59,7 +59,7 @@ ReactDOM.render(
       </Form.Control>
 
       <Form.Control valid={false} validated label="Are you man or boy?" error="Liar!">
-        <Form.RadioGroup name="different" options={{man: 'Man', boy: 'Boy'}}/>
+        <Form.RadioGroup name="different" defaultValue="man" value="boy" options={{man: 'Man', boy: 'Boy'}}/>
       </Form.Control>
 
       <Form.Control label="In what state is your man-palace?" valid validated>

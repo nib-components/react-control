@@ -26,7 +26,6 @@
     "example.css.build": "sass-composer index.scss -o example/index.bundled.css",
     "example.css.watch": "sass-composer --watch index.scss -o example/index.bundled.css",
 	  "example.build": "npm run build && npm run example.js.build && npm run example.css.build",
-	  "example.watch": "npm run watch && npm run example.js.watch && npm run example.css.watch",
 	  "deploy": "npm run example.build && firebase deploy",
     "prepublish": "npm run build"
   }
