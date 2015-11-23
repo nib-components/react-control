@@ -31,8 +31,8 @@ export default class Control extends React.Component {
     let controlAlertClasses = classNames('control__alert', 'v2-icon', 'v2-icon--smallest', {
       'v2-icon--tick': valid,
       'v2-icon--warning-inverse': !valid,
-      'control__alert--outside': children && (children.type === RadioGroup || children.type === Select || children.type === Checkbox),
-      'control__alert--checkboxGroup': children.type === CheckboxGroup,
+      'control__alert--outside': children && (children.type === RadioGroup || children.type === Select),
+      'control__alert--checkbox': children.type === CheckboxGroup || children.type === Checkbox,
     });
 
     return <div className={controlClasses}>
