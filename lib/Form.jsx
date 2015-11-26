@@ -23,7 +23,7 @@ export default class Form extends React.Component {
 
   renderChildren(children) {
     return React.Children.map(children, function(child) {
-      if (child && child.type === Control) {
+      if (React.isValidElement(child) && child.type === Control) {
         return <div className="form__control">{child}</div>;
       }
       return child;
