@@ -20,13 +20,13 @@ export default class Control extends React.Component {
 
     let controlClasses = classNames('control', {
       'control--valid': validated && valid,
-      'control--invalid': validated && !valid
+      'control--invalid': validated && !valid,
+      [`control--${props.name}`]: props.name
     });
 
     //noinspection Eslint
     let controlInputClasses = classNames('control__input', {
-      'control__input--shrink': children && (children.type === RadioGroup || children.type === Select || children.type === Checkbox),
-      [`control--${props.name}`]: props.name
+      'control__input--shrink': children && (children.type === RadioGroup || children.type === Select || children.type === Checkbox)
     });
 
     let controlAlertClasses = classNames('control__alert', 'v2-icon', 'v2-icon--smallest', {
