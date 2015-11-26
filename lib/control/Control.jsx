@@ -25,7 +25,8 @@ export default class Control extends React.Component {
 
     //noinspection Eslint
     let controlInputClasses = classNames('control__input', {
-      'control__input--shrink': children && (children.type === RadioGroup || children.type === Select || children.type === Checkbox)
+      'control__input--shrink': children && (children.type === RadioGroup || children.type === Select || children.type === Checkbox),
+      [`control--${props.name}`]: props.name
     });
 
     let controlAlertClasses = classNames('control__alert', 'v2-icon', 'v2-icon--smallest', {
