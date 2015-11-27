@@ -34,7 +34,7 @@ ReactDOM.render(
 
     <Form theme="white" title="A React Form">
 
-      <Form.Control valid label="What's your name" help="We just need your first name.">
+      <Form.Control name="firstName" valid label="What's your name" help="We just need your first name.">
         <Form.Text/>
       </Form.Control>
 
