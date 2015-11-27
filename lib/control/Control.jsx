@@ -5,6 +5,8 @@ import classNames from 'classnames';
 import Text from '../fields/Text';
 import Select from './../fields/Select';
 import RadioGroup from '../fields/RadioGroup';
+import Checkbox from '../fields/Checkbox';
+import CheckboxGroup from '../fields/CheckboxGroup';
 
 export default class Control extends React.Component {
 
@@ -18,18 +20,20 @@ export default class Control extends React.Component {
 
     let controlClasses = classNames('control', {
       'control--valid': validated && valid,
-      'control--invalid': validated && !valid
+      'control--invalid': validated && !valid,
+      [`control--${props.name}`]: props.name
     });
 
     //noinspection Eslint
     let controlInputClasses = classNames('control__input', {
-      'control__input--shrink': children && (children.type === RadioGroup || children.type === Select)
+      'control__input--shrink': children && (children.type === RadioGroup || children.type === Select || children.type === Checkbox)
     });
 
     let controlAlertClasses = classNames('control__alert', 'v2-icon', 'v2-icon--smallest', {
       'v2-icon--tick': valid,
       'v2-icon--warning-inverse': !valid,
-      'control__alert--outside': children && (children.type === RadioGroup || children.type === Select)
+      'control__alert--outside': children && (children.type === RadioGroup || children.type === Select),
+      'control__alert--checkbox': children.type === CheckboxGroup || children.type === Checkbox,
     });
 
     return <div className={controlClasses}>

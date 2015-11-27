@@ -16,6 +16,19 @@ const states = {
   wa: 'Western Australia'
 };
 
+const extras = {
+  generalDental: "General Dental",
+  majorDental: "Major Dental",
+  preventativeDental: "Preventative Dental",
+  physio: "Physio",
+  optical: "Optical",
+  chiro: "Chiro",
+  remedialMassage: "Remedial Massage",
+  dietaryAdvice: "Dietary Advice",
+  speechPathology: "Speech Pathology",
+  occupationalTherapy: "Occupational Therapy"
+};
+
 ReactDOM.render(
   <div>
 
@@ -37,6 +50,14 @@ ReactDOM.render(
 
       <Form.Control label="In what state is your man-palace?">
         <Form.Select options={states} placeholder="Where do you live?"/>
+      </Form.Control>
+
+      <Form.Control valid validated label="Can we add you to all of our mailing lists?">
+        <Form.Checkbox name="privacy" value="Yes" label="Yes, send me lots of emails please." />
+      </Form.Control>
+
+      <Form.Control valid validated label="What extras do you want?">
+        <Form.CheckboxGroup name="blah" options={{dental: 'Dental', physio: 'Physio', optical: "Optical", chiro: "Chiro", massage: "Massage"}}/>
       </Form.Control>
 
       <button className="v2-button v2-button--primary v2-button--icon-on-right" href="">
@@ -65,6 +86,14 @@ ReactDOM.render(
         <Form.Select options={states} placeholder="Where do you live?"/>
       </Form.Control>
 
+      <Form.Control valid validated label="Can we add you to all of our mailing lists?">
+        <Form.Checkbox name="privacy" value="Yes" label="Yes, send me lots of emails please." />
+      </Form.Control>
+
+      <Form.Control valid validated label="What extras do you want?">
+        <Form.CheckboxGroup name="blah" value="optical" options={extras}/>
+      </Form.Control>
+
       <button className="v2-button v2-button--primary v2-button--icon-on-right" href="">
         Another button <i className="v2-icon v2-icon--smallest v2-icon--chevron-circle-inverse v2-icon--offset-descenders"></i>
       </button>
@@ -89,6 +118,18 @@ ReactDOM.render(
 
       <Form.Control valid={false} validated label="In what state is your man-palace?" error="NSW is the best">
         <Form.Select options={states} placeholder="Where do you live?"/>
+      </Form.Control>
+
+      <Form.Control valid validated label="Can we add you to all of our mailing lists?">
+        <Form.Checkbox name="privacy" value="Yes" label="Yes, send me lots of emails please." />
+      </Form.Control>
+
+      <Form.Control valid validated label="What extras do you want?">
+        <Form.CheckboxGroup name="blah" defaultValue={["optical", "chiro"]} options={{dental: 'Dental', physio: 'Physio', optical: "Optical", chiro: "Chiro", massage: "Massage"}}/>
+      </Form.Control>
+
+      <Form.Control valid validated label="What extras do you want?">
+        <Form.CheckboxGroup name="blah" options={extras} />
       </Form.Control>
 
     </Form>
