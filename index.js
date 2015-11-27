@@ -1,5 +1,5 @@
 import Form from './lib/Form';
-import Control from './lib/control/Control';
+import Control from './lib/Control';
 import Text from './lib/fields/Text';
 import Select from './lib/fields/Select';
 import Radio from './lib/fields/Radio';

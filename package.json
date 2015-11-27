@@ -7,26 +7,39 @@
     "@nib-styles/react-form": "^0.0.7"
   },
   "devDependencies": {
+    "@nib-styles/v2-buttons": "^2.1.1",
     "babel": "^5.8.29",
     "babelify": "^6.4.0",
     "browserify": "^12.0.0",
+    "chai": "^3.4.1",
+    "chai-jsx": "^1.0.1",
+    "eslint": "^1.10.1",
+    "eslint-config-jameslnewell": "^0.3.0",
     "invariant": "^2.1.2",
-    "react": "^0.14.0",
+    "mocha": "^2.3.4",
+    "react": "^0.14.3",
+    "react-addons-test-utils": "^0.14.3",
     "react-dom": "^0.14.0",
+    "react-testutils-query": "^0.1.1",
+    "react-testutils-render": "^0.1.2",
     "sass-composer": "^2.0.0-beta12",
-    "watchify": "^3.5.0",
-    "@nib-styles/v2-buttons": "^2.1.1"
+    "watchify": "^3.5.0"
+  },
+  "peerDependencies": {
+    "react": ">=0.14.0"
   },
   "scripts": {
-    "lint": "eslint -c jameslnewell/react lib/**/*.jsx",
+    "lint": "eslint lib/**/*.jsx",
+    "test": "mocha --recursive --compilers jsx:babel/register --require test/boot.js",
+    "test.watch": "mocha --recursive --compilers jsx:babel/register --require test/boot.js --watch",
     "build": "babel ./index.js ./lib/*.jsx ./lib/**/*.jsx -d ./dist --source-maps",
     "watch": "babel ./index.js ./lib/*.jsx ./lib/**/*.jsx -d ./dist --watch --source-maps",
     "example.js.build": "browserify -v --debug -t babelify example/index.js -o example/index.bundled.js",
     "example.js.watch": "watchify -v --debug -t babelify example/index.js -o example/index.bundled.js",
     "example.css.build": "sass-composer index.scss -o example/index.bundled.css",
     "example.css.watch": "sass-composer --watch index.scss -o example/index.bundled.css",
-	  "example.build": "npm run build && npm run example.js.build && npm run example.css.build",
-	  "deploy": "npm run example.build && firebase deploy",
-    "prepublish": "npm run build"
+    "example.build": "npm run build && npm run example.js.build && npm run example.css.build",
+    "deploy": "npm run example.build && firebase deploy",
+    "prepublish": "npm run build && npm run test"
   }
 }

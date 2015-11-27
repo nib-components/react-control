@@ -2,21 +2,16 @@ import React from 'react';
 import invariant from 'invariant';
 import classNames from 'classnames';
 
-import Text from '../fields/Text';
-import Select from './../fields/Select';
-import RadioGroup from '../fields/RadioGroup';
-import Checkbox from '../fields/Checkbox';
-import CheckboxGroup from '../fields/CheckboxGroup';
+import Text from './fields/Text';
+import Select from '././fields/Select';
+import RadioGroup from './fields/RadioGroup';
+import Checkbox from './fields/Checkbox';
+import CheckboxGroup from './fields/CheckboxGroup';
 
 export default class Control extends React.Component {
 
   render() {
     let {label, help, error, valid, validated, children, ...props} = this.props;
-
-    invariant(
-      React.Children.count(children) === 1,
-      'A control must have a single input.'
-    );
 
     let controlClasses = classNames('control', {
       'control--valid': validated && valid,
@@ -77,7 +72,8 @@ Control.propTypes = {
   help: React.PropTypes.string,
   error: React.PropTypes.string,
   valid: React.PropTypes.bool,
-  validated: React.PropTypes.bool
+  validated: React.PropTypes.bool,
+  children: React.PropTypes.element.isRequired
 };
 
 Control.defaultProps = {
