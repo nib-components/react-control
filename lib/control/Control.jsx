@@ -20,7 +20,8 @@ export default class Control extends React.Component {
 
     let controlClasses = classNames('control', {
       'control--valid': validated && valid,
-      'control--invalid': validated && !valid
+      'control--invalid': validated && !valid,
+      [`control--${props.name}`]: props.name
     });
 
     //noinspection Eslint
