@@ -8,6 +8,3 @@ export default class TextInput extends React.Component {
   }
 
 }
-//
-//TextInput.propTypes = {
-//};

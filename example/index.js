@@ -21,18 +21,18 @@ ReactDOM.render(
 
     <Form theme="white" title="A React Form">
 
-      <Form.Control valid={true} label="What's your name" help="We just need your first name.">
+      <Form.Control valid label="What's your name" help="We just need your first name.">
         <Form.Text/>
       </Form.Control>
 
       <Form.Divider />
 
-      <Form.Control label="Are you man or boy?" message="You are not!">
+      <Form.Control valid={false} validated label="Are you man or boy?" error="You are not!">
         <Form.Text/>
       </Form.Control>
 
-      <Form.Control valid={true} label="Are you man or boy?">
-        <Form.RadioGroup name="stature" options={{man: 'Man', boy: 'Boy'}}/>
+      <Form.Control valid validated label="Are you man or boy?">
+        <Form.RadioGroup name="stature" options={{man: 'Man', boy: 'Boy'}} onChange={event => console.log('change' ,event.target.value)} onBlur={event => console.log('blur', event.target.value)}/>
       </Form.Control>
 
       <Form.Control label="In what state is your man-palace?">
@@ -47,21 +47,21 @@ ReactDOM.render(
 
     <Form theme="green" title="And a Green One!">
 
-      <Form.Control label="What's your name" help="We just need your first name." message="Just your name!">
+      <Form.Control valid validated label="What's your name" help="We just need your first name." error="Just your name!">
         <Form.Text/>
       </Form.Control>
 
       <Form.Divider />
 
-      <Form.Control valid={true} label="Are you man or boy?">
+      <Form.Control valid validated label="Are you man or boy?">
         <Form.Text/>
       </Form.Control>
 
-      <Form.Control valid={true} label="Are you man or boy?">
-        <Form.RadioGroup name="stature" options={{man: 'Man', boy: 'Boy'}}/>
+      <Form.Control valid={false} validated label="Are you man or boy?" error="Liar!">
+        <Form.RadioGroup name="different" defaultValue="man" value="boy" options={{man: 'Man', boy: 'Boy'}}/>
       </Form.Control>
 
-      <Form.Control label="In what state is your man-palace?" valid={true}>
+      <Form.Control label="In what state is your man-palace?" valid validated>
         <Form.Select options={states} placeholder="Where do you live?"/>
       </Form.Control>
 
@@ -73,21 +73,21 @@ ReactDOM.render(
 
     <Form theme="grey">
 
-      <Form.Control label="What's your name" help="We just need your first name." message="Just your name!">
+      <Form.Control valid={false} validated label="What's your name" help="We just need your first name." error="Just your name!">
         <Form.Text/>
       </Form.Control>
 
       <Form.Divider />
 
-      <Form.Control valid={true} label="Are you man or boy?">
+      <Form.Control valid validated label="Are you man or boy?">
         <Form.Text/>
       </Form.Control>
 
-      <Form.Control valid={true} label="Are you man or boy?">
-        <Form.RadioGroup name="stature" options={{man: 'Man', boy: 'Boy'}}/>
+      <Form.Control valid validated label="Are you man or boy?">
+        <Form.RadioGroup name="blah" options={{man: 'Man', boy: 'Boy'}}/>
       </Form.Control>
 
-      <Form.Control label="In what state is your man-palace?" valid={true}>
+      <Form.Control valid={false} validated label="In what state is your man-palace?" error="NSW is the best">
         <Form.Select options={states} placeholder="Where do you live?"/>
       </Form.Control>
 

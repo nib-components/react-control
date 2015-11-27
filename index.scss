@@ -1,15 +1,1 @@
-@import "@nib-styles/sass-breakpoints";
-@import "@nib-styles/v2-icons/dist/compiled.css";
-@import "@nib-styles/v2-typography/dist/compiled.css";
-@import "@nib-styles/v2-buttons/index.scss";
-
-$copy-color-default: #444;
-$copy-font-family-default: 'Open Sans', sans-serif;
-
-@import './lib/form';
-@import './lib/label';
-@import './lib/control/control';
-@import './lib/fields/text';
-@import './lib/fields/select';
-@import './lib/fields/radio';
-@import './lib/divider';
+@import "@nib-styles/react-form";

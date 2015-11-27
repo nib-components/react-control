@@ -47,17 +47,63 @@ A control component - provides control markup and behaviour.
 
 #### Properties
 
-- name - A name used by the browser
-- label - A label displayed to the user
+- name - The name of the control
+- label - A label displayed to the user  *(required)*
+- help - Extra supporting text for the field
+- error - An error displayed to the user
 - valid - Whether the control is valid
-- message - A message displayed to the user
+- validated - Whether the user has interacted and left the field
 
 ### Text
 
+```
+<Text></Text>
+```
+
 ### Select
+
+A select box.
+
+```
+<Select></Select>
+```
+
+#### Props
+
+- options - An object of `value: "Displayed Text"` pairs *(required)*
+- placeholder - Default text for select, with no value
 
 ### Radio
 
+```
+<Radio></Radio>
+```
+
+#### Props
+
+- name - Unique name of radio *(required)*
+- value - Value of radio option *(required)*
+- label - Describing the option *(required)*
+
 ### RadioGroup
 
+```
+<RadioGroup></RadioGroup>
+```
+
+#### Props
+
+- name - A unique name *(required)*
+- options - An object of `value: "Displayed Text"` pairs *(required)*
+
 ### Divider
+
+A horizontal rule.
+
+```
+<Divider />
+```
+
+## To do
+
+- initial value
