@@ -14,7 +14,7 @@
     "chai": "^3.4.1",
     "chai-jsx": "^1.0.1",
     "eslint": "^1.10.1",
-    "eslint-config-jameslnewell": "^0.3.0",
+    "eslint-config-jameslnewell": "^0.3.2",
     "invariant": "^2.1.2",
     "mocha": "^2.3.4",
     "react": "^0.14.3",
@@ -40,6 +40,6 @@
     "example.css.watch": "sass-composer --watch index.scss -o example/index.bundled.css",
     "example.build": "npm run build && npm run example.js.build && npm run example.css.build",
     "deploy": "npm run example.build && firebase deploy",
-    "prepublish": "npm run build && npm run test"
+    "prepublish": "npm run lint && npm run build && npm run test"
   }
 }

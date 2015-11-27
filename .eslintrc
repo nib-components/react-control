@@ -1,3 +1,6 @@
 {
+  "rules": {
+    "import/no-named-as-default": 0 //breaking because of object rest spreader in imported file TODO: report bug
+  },
   "extends": "jameslnewell/react"
 }
