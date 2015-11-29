@@ -5,13 +5,19 @@ export default class RadioGroup extends React.Component {
 
   render() {
 
-    let {name, value, defaultValue, options, ...props} = this.props;
+    const {name, value, defaultValue, options, ...props} = this.props;
 
-    return <div className="radio-group">
-      {Object.keys(options).map(option => {
-        return <RadioInput {...props} key={option} name={name} value={option} label={options[option]} checked={value ? option === value : null} defaultChecked={option === defaultValue}/>;
-      })}
-    </div>;
+    return (
+      <div className="radio-group">
+        {Object.keys(options).map(option => (
+          <RadioInput
+            {...props}
+            key={option} name={name} label={options[option]} value={option}
+            checked={value ? option === value : null} defaultChecked={option === defaultValue}
+          />
+        ))}
+      </div>
+    );
 
   }
 
@@ -19,5 +25,7 @@ export default class RadioGroup extends React.Component {
 
 RadioGroup.propTypes = {
   name: React.PropTypes.string.isRequired,
-  options: React.PropTypes.object.isRequired
+  options: React.PropTypes.object.isRequired,
+  value: React.PropTypes.string,
+  defaultValue: React.PropTypes.string
 };
