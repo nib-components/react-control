@@ -1,5 +1,4 @@
 import React from 'react';
-import invariant from 'invariant';
 import classNames from 'classnames';
 
 import Text from './fields/Text';
