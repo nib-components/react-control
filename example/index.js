@@ -60,7 +60,7 @@ ReactDOM.render(
         <Form.CheckboxGroup name="blah" options={{dental: 'Dental', physio: 'Physio', optical: "Optical", chiro: "Chiro", massage: "Massage"}}/>
       </Form.Control>
 
-      <Form.Button text="Submit" />
+      <Form.Button text="Submit" id="ga-test" />
 
     </Form>
 
