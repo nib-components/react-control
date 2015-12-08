@@ -1,9 +1,11 @@
 {
   "name": "@nib-components/react-form",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "main": "./dist/index.js",
   "dependencies": {
-    "classnames": "^2.2.0"
+    "classnames": "^2.2.0",
+    "react-testutils-query": "^0.1.2",
+    "react-testutils-render": "^0.1.2"
   },
   "devDependencies": {
     "@nib-styles/react-form": "^0.0.9",
