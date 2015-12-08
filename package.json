@@ -1,18 +1,18 @@
 {
   "name": "@nib-components/react-form",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "main": "./dist/index.js",
   "dependencies": {
-    "classnames": "^2.2.0",
-    "@nib-styles/react-form": "^0.0.9"
+    "classnames": "^2.2.0"
   },
   "devDependencies": {
-    "@nib-styles/v2-buttons": "^2.1.1",
+    "@nib-styles/react-form": "^0.0.9",
     "babel": "^5.8.29",
     "babelify": "^6.4.0",
     "browserify": "^12.0.0",
     "chai": "^3.4.1",
     "chai-jsx": "^1.0.1",
+    "classnames": "^2.2.0",
     "eslint": "^1.10.1",
     "eslint-config-jameslnewell": "^0.3.2",
     "invariant": "^2.1.2",
@@ -36,7 +36,7 @@
     "watch": "babel ./index.js ./lib/*.jsx ./lib/**/*.jsx -d ./dist --watch --source-maps",
     "example.js.build": "browserify -v --debug -t babelify example/index.js -o example/index.bundled.js",
     "example.js.watch": "watchify -v --debug -t babelify example/index.js -o example/index.bundled.js",
-    "example.css.build": "sass-composer index.scss -o example/index.bundled.css",
+    "example.css.build": "sass-composer example/index.scss -o example/index.bundled.css",
     "example.css.watch": "sass-composer --watch index.scss -o example/index.bundled.css",
     "example.build": "npm run build && npm run example.js.build && npm run example.css.build",
     "deploy": "npm run example.build && firebase deploy",
