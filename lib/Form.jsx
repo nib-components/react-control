@@ -16,7 +16,7 @@ export default class Form extends React.Component {
 
   renderTitle(title) {
     if (title) {
-      return <h3 className="form__title v2-title v2-title--2 form__title">{title}</h3>
+      return <h3 className="form__title v2-title v2-title--2 form__title">{title}</h3>;
     }
     return null;
   }
