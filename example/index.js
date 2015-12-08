@@ -60,9 +60,7 @@ ReactDOM.render(
         <Form.CheckboxGroup name="blah" options={{dental: 'Dental', physio: 'Physio', optical: "Optical", chiro: "Chiro", massage: "Massage"}}/>
       </Form.Control>
 
-      <button className="v2-button v2-button--primary v2-button--icon-on-right" href="">
-        Button <i className="v2-icon v2-icon--smallest v2-icon--chevron-circle-inverse v2-icon--offset-descenders"></i>
-      </button>
+      <Form.Button text="Submit" />
 
     </Form>
 
@@ -94,9 +92,7 @@ ReactDOM.render(
         <Form.CheckboxGroup name="blah" value="optical" options={extras}/>
       </Form.Control>
 
-      <button className="v2-button v2-button--primary v2-button--icon-on-right" href="">
-        Another button <i className="v2-icon v2-icon--smallest v2-icon--chevron-circle-inverse v2-icon--offset-descenders"></i>
-      </button>
+      <Form.Button text="Another Button" />
 
     </Form>
 
@@ -131,6 +127,8 @@ ReactDOM.render(
       <Form.Control valid validated label="What extras do you want?">
         <Form.CheckboxGroup name="blah" options={extras} />
       </Form.Control>
+
+      <Form.Button text="Submit" />
 
     </Form>
   </div>,

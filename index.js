@@ -7,6 +7,7 @@ import RadioGroup from './lib/fields/RadioGroup';
 import Checkbox from './lib/fields/Checkbox';
 import CheckboxGroup from './lib/fields/CheckboxGroup';
 import Divider from './lib/Divider';
+import Button from './lib/Button';
 
 Form.Control = Control;
 Form.Text = Text;
@@ -16,5 +17,6 @@ Form.RadioGroup = RadioGroup;
 Form.Checkbox = Checkbox;
 Form.CheckboxGroup = CheckboxGroup;
 Form.Divider = Divider;
+Form.Button = Button;
 
 export default Form;
