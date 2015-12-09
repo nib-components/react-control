@@ -36,24 +36,24 @@ export default class Control extends React.Component {
           {label}
         </label>
 
-        {help &&
-          <span className="control__help">{help}</span>
+        {help
+          && <span className="control__help">{help}</span>
         }
 
         <div className={controlInputClasses}>
 
-          {children &&
-            React.cloneElement(children, props)
+          {children
+            && React.cloneElement(children, props)
           }
 
-          {validated &&
-            <i className={controlAlertClasses}></i>
+          {validated
+            && <i className={controlAlertClasses}></i>
           }
 
         </div>
 
-        {error &&
-          <div className="control__message">
+        {error
+          && <div className="control__message">
             <p className="control__message-text">{error}</p>
           </div>
         }
