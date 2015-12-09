@@ -28,7 +28,7 @@ import Form from '@nib-components/react-form';
 A form component - provides form markup and behaviour.
 
 ```
-<Form></Form>
+<Form title="Join" theme="green" onSubmit={onSubmit}></Form>
 ```
 
 #### Properties
@@ -42,7 +42,7 @@ A form component - provides form markup and behaviour.
 A control component - provides control markup and behaviour.
 
 ```
-<Form.Control></Form.Control>
+<Form.Control label="First Name"></Form.Control>
 ```
 
 #### Properties
@@ -57,7 +57,7 @@ A control component - provides control markup and behaviour.
 ### Text
 
 ```
-<Text></Text>
+<Form.Text></Form.Text>
 ```
 
 ### Select
@@ -65,7 +65,7 @@ A control component - provides control markup and behaviour.
 A select box.
 
 ```
-<Select></Select>
+<Form.Select options={mr: 'Mr', mrs: 'Mrs'}></Form.Select>
 ```
 
 #### Props
@@ -76,7 +76,7 @@ A select box.
 ### Radio
 
 ```
-<Radio></Radio>
+<Form.Radio name="gender" value="female" label="Female"></Form.Radio>
 ```
 
 #### Props
@@ -88,7 +88,7 @@ A select box.
 ### RadioGroup
 
 ```
-<RadioGroup></RadioGroup>
+<Form.RadioGroup name="gender" options={female: 'Female', male: 'Male'}></Form.RadioGroup>
 ```
 
 #### Props
@@ -96,12 +96,24 @@ A select box.
 - name - A unique name *(required)*
 - options - An object of `value: "Displayed Text"` pairs *(required)*
 
+### Button
+
+```
+<Form.Button label="Submit" glyph="heart"></Form.Button>
+```
+
+#### Props
+
+- label - Text displayed on the button *(required)*
+- glyph - from v2-icons. Dfaults to `chevron-circle-inverse`
+- id - an id to potentially use for ga-inlink ids
+
 ### Divider
 
 A horizontal rule.
 
 ```
-<Divider />
+<Form.Divider />
 ```
 
 ## To do
