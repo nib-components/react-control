@@ -12,12 +12,11 @@ export default class Control extends React.Component {
     const {label, help, error, valid, validated, children, ...props} = this.props;
 
     const controlClasses = classNames('control', {
+      [`control--${props.name}`]: props.name,
       'control--valid': validated && valid,
-      'control--invalid': validated && !valid,
-      [`control--${props.name}`]: props.name
+      'control--invalid': validated && !valid
     });
 
-    //noinspection Eslint
     const controlInputClasses = classNames('control__input', {
       'control__input--shrink': children && (children.type === RadioGroup || children.type === Select || children.type === Checkbox)
     });
@@ -75,8 +74,6 @@ Control.propTypes = {
 };
 
 Control.defaultProps = {
-  name: '',
-  label: '',
   help: '',
   error: '',
   valid: false,
