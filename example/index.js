@@ -2,10 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Form from '..';
 
-const options = [
-  {value: 'act', label: 'Australian...'}
-];
-
 const states = {
   act: 'Australian Capital Territory',
   nt: 'Northern Territory',
@@ -60,7 +56,7 @@ ReactDOM.render(
         <Form.CheckboxGroup name="blah" options={{dental: 'Dental', physio: 'Physio', optical: "Optical", chiro: "Chiro", massage: "Massage"}}/>
       </Form.Control>
 
-      <Form.Button text="Submit" id="ga-test" />
+      <Form.Button label="Submit" id="ga-test" />
 
     </Form>
 
@@ -92,7 +88,7 @@ ReactDOM.render(
         <Form.CheckboxGroup name="blah" value="optical" options={extras}/>
       </Form.Control>
 
-      <Form.Button text="Another Button" />
+      <Form.Button label="Another Button" />
 
     </Form>
 
@@ -128,7 +124,7 @@ ReactDOM.render(
         <Form.CheckboxGroup name="blah" options={extras} />
       </Form.Control>
 
-      <Form.Button text="Submit" />
+      <Form.Button label="Submit" />
 
     </Form>
   </div>,
