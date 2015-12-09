@@ -10,5 +10,5 @@ chai.use(jsx);
 
 global.expect = chai.expect;
 global.React = React;
-global.query = query;
+global.$ = query;
 global.render = render;
