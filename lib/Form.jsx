@@ -4,8 +4,8 @@ import Control from './Control';
 
 export default class Form extends React.Component {
 
-  constructor(props, ...args) {
-    super(props, ...args);
+  constructor(...args) {
+    super(...args);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -15,18 +15,16 @@ export default class Form extends React.Component {
   }
 
   renderTitle(title) {
-    if (title) {
-      return <h3 className="form__title v2-title v2-title--2 form__title">{title}</h3>;
-    }
-    return null;
+    return title && <h3 className="form__title v2-title v2-title--2 form__title">{title}</h3>;
   }
 
   renderChildren(children) {
     return React.Children.map(children, function(child) {
       if (React.isValidElement(child) && child.type === Control) {
         return <div className="form__control">{child}</div>;
+      } else {
+        return child;
       }
-      return child;
     });
   }
 

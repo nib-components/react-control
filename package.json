@@ -19,7 +19,7 @@
     "react": "^0.14.3",
     "react-addons-test-utils": "^0.14.3",
     "react-dom": "^0.14.0",
-    "react-testutils-query": "^0.3.2",
+    "react-testutils-query": "^0.4.2",
     "react-testutils-render": "^0.1.2",
     "sass-composer": "^2.0.0-beta12",
     "watchify": "^3.5.0"
