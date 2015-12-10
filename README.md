@@ -106,7 +106,6 @@ A select box.
 
 - label - Text displayed on the button *(required)*
 - glyph - from v2-icons. Dfaults to `chevron-circle-inverse`
-- id - an id to potentially use for ga-inlink ids
 
 ### Divider
 

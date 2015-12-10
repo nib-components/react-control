@@ -18,6 +18,11 @@ describe('Button', () => {
 
   describe('.render()', () => {
 
+    it('should render the label correctly', () => {
+      const label = $(render(<Button label='Submitttz' />).element);
+      expect(label.hasText('Submitttz')).to.be.true;
+    });
+
     it('should have a default glyph of chevron-circle-inverse when glyph is not specified', () => {
       const icon = $(render(<Button label='test button' />).element).find('i');
       expect(icon.hasClass(['v2-icon--chevron-circle-inverse'])).to.be.true;
