@@ -1,9 +1,10 @@
 {
   "name": "@nib-components/react-form",
-  "version": "0.3.3",
+  "version": "0.4.0",
   "main": "./dist/index.js",
   "dependencies": {
-    "classnames": "^2.2.0"
+    "classnames": "^2.2.0",
+    "react-testutils-query": "^0.5.0"
   },
   "devDependencies": {
     "@nib-styles/react-form": "^0.0.9",
@@ -19,7 +20,7 @@
     "react": "^0.14.3",
     "react-addons-test-utils": "^0.14.3",
     "react-dom": "^0.14.0",
-    "react-testutils-query": "^0.4.2",
+    "react-testutils-query": "^0.4.3",
     "react-testutils-render": "^0.1.2",
     "sass-composer": "^2.0.0-beta12",
     "watchify": "^3.5.0"

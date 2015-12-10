@@ -1,31 +1,28 @@
 import React from 'react';
 import classNames from 'classnames';
 
-export default class RadioInput extends React.Component {
+/**
+ * Render a radio input
+ * @param   {object} props
+ * @returns {ReactElement}
+ */
+export default function radio(props) {
+  const {label, ...otherProps} = props;
 
-  render() {
-    const {label, ...props} = this.props;
+  const radioClassNames = classNames('radio', {
+    'radio--selected': props.checked
+  });
 
-    //FIXME - never unselected when value is not set and the user selects a different radio option
-    const checked = this.props.checked !== null ? this.props.checked : this.props.defaultChecked;
-
-    const radioClassNames = classNames('radio', {
-      'radio--selected': checked
-    });
-
-    return (
-      <label className={radioClassNames}>
-        <input type="radio" className="radio__input" {...props}/> {label}
-      </label>
-    );
-  }
-
+  return (
+    <label className={radioClassNames}>
+      <input type="radio" className="radio__input" {...otherProps}/> {label}
+    </label>
+  );
 }
 
-RadioInput.propTypes = {
+radio.propTypes = {
   name: React.PropTypes.string.isRequired,
-  label: React.PropTypes.string.isRequired,
   value: React.PropTypes.string.isRequired,
-  checked: React.PropTypes.bool,
-  defaultChecked: React.PropTypes.bool
+  label: React.PropTypes.string.isRequired,
+  checked: React.PropTypes.string.isRequired
 };

@@ -1,29 +1,33 @@
 import React from 'react';
 import RadioInput from './Radio';
 
-export default class RadioGroup extends React.Component {
+//FIXME - the radio is never unselected when user selects a different radio
+// => need to maintain state if we're going to make it work without it being hooked up :(
 
-  render() {
+/**
+ * Render a group of radio inputs
+ * @param   {object} props
+ * @returns {ReactElement}
+ */
+export default function radioGroup(props) {
+  const {name, value, defaultValue, options, ...otherProps} = props;
 
-    const {name, value, defaultValue, options, ...props} = this.props;
-
-    return (
-      <div className="radio-group">
-        {Object.keys(options).map(option => (
-          <RadioInput
-            {...props}
-            key={option} name={name} label={options[option]} value={option}
-            checked={value ? option === value : null} defaultChecked={option === defaultValue}
-          />
-        ))}
-      </div>
-    );
-
-  }
-
+  return (
+    <div className="radio-group">
+      {Object.keys(options).map(option => (
+        <RadioInput
+          {...otherProps}
+          key={option}
+          name={name} value={option} label={options[option]}
+          checked={typeof value !== 'undefined' ? option === value : null}
+          defaultChecked={option === defaultValue}
+        />
+      ))}
+    </div>
+  );
 }
 
-RadioGroup.propTypes = {
+radioGroup.propTypes = {
   name: React.PropTypes.string.isRequired,
   options: React.PropTypes.object.isRequired,
   value: React.PropTypes.string,

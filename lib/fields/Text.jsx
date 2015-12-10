@@ -1,10 +1,12 @@
 import React from 'react';
 
-export default class TextInput extends React.Component {
-
-  render() {
-    const {...props} = this.props;
-    return <input className="textbox" {...props}/>;
-  }
-
+/**
+ * Render a text input
+ * @param   {object} props
+ * @returns {ReactElement}
+ */
+export default function Text(props) {
+  return (
+    <input className="textbox" {...props}/>
+  );
 }

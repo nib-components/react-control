@@ -1,33 +1,30 @@
 import React from 'react';
 import classNames from 'classnames';
 
-export default class Checkbox extends React.Component {
+/**
+ * Render a checkbox input
+ * @param   {object} props
+ * @returns {ReactElement}
+ */
+export default function checkbox(props) {
+  const {label, ...otherProps} = props;
 
-  render() {
-    const {label, ...props} = this.props;
+  const checkboxClassNames = classNames('checkbox', {
+    'checkbox--selected': props.checked
+  });
 
-    //FIXME - never unselected when value is not set and the user selects a different radio option
-    const checked = this.props.checked !== null ? this.props.checked : this.props.defaultChecked;
-
-    const checkboxClassNames = classNames('checkbox', {
-      'checkbox--selected': checked
-    });
-
-    return (
-      <div className="checkbox-wrapper">
-        <label className={checkboxClassNames}>
-          <input type="checkbox" className="checkbox__input" {...props}/> {label}
-        </label>
-      </div>
-    );
-  }
-
+  return (
+    <div className="checkbox-wrapper">
+      <label className={checkboxClassNames}>
+        <input type="checkbox" className="checkbox__input" {...otherProps}/> {label}
+      </label>
+    </div>
+  );
 }
 
-Checkbox.propTypes = {
+checkbox.propTypes = {
   name: React.PropTypes.string.isRequired,
   value: React.PropTypes.string.isRequired,
   label: React.PropTypes.string.isRequired,
-  checked: React.PropTypes.bool,
-  defaultChecked: React.PropTypes.bool
+  checked: React.PropTypes.bool
 };

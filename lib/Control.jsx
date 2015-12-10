@@ -6,60 +6,58 @@ import RadioGroup from './fields/RadioGroup';
 import Checkbox from './fields/Checkbox';
 import CheckboxGroup from './fields/CheckboxGroup';
 
-export default class Control extends React.Component {
+export default function Control(props) {
 
-  render() {
-    const {label, help, error, valid, validated, children, ...props} = this.props;
+  const {label, help, error, valid, validated, children, ...otherProps} = props;
 
-    const controlClasses = classNames('control', {
-      [`control--${props.name}`]: props.name,
-      'control--valid': validated && valid,
-      'control--invalid': validated && !valid
-    });
+  const controlClasses = classNames('control', {
+    [`control--${props.name}`]: props.name,
+    'control--valid': validated && valid,
+    'control--invalid': validated && !valid
+  });
 
-    const controlInputClasses = classNames('control__input', {
-      'control__input--shrink': children && (children.type === RadioGroup || children.type === Select || children.type === Checkbox)
-    });
+  const controlInputClasses = classNames('control__input', {
+    'control__input--shrink': children && (children.type === RadioGroup || children.type === Select || children.type === Checkbox)
+  });
 
-    const controlAlertClasses = classNames('control__alert', 'v2-icon', 'v2-icon--smallest', {
-      'v2-icon--tick': valid,
-      'v2-icon--warning-inverse': !valid,
-      'control__alert--outside': children && (children.type === RadioGroup || children.type === Select),
-      'control__alert--checkbox': children.type === CheckboxGroup || children.type === Checkbox
-    });
+  const controlAlertClasses = classNames('control__alert', 'v2-icon', 'v2-icon--smallest', {
+    'v2-icon--tick': valid,
+    'v2-icon--warning-inverse': !valid,
+    'control__alert--outside': children && (children.type === RadioGroup || children.type === Select),
+    'control__alert--checkbox': children.type === CheckboxGroup || children.type === Checkbox
+  });
 
-    return (
-        <div className={controlClasses}>
+  return (
+      <div className={controlClasses}>
 
-        <label className="control__label label">
-          {label}
-        </label>
+      <label className="control__label label">
+        {label}
+      </label>
 
-        {help &&
-          <span className="control__help">{help}</span>
+      {help &&
+        <span className="control__help">{help}</span>
+      }
+
+      <div className={controlInputClasses}>
+
+        {children &&
+          React.cloneElement(children, otherProps)
         }
 
-        <div className={controlInputClasses}>
-
-          {children &&
-            React.cloneElement(children, props)
-          }
-
-          {validated &&
-            <i className={controlAlertClasses}></i>
-          }
-
-        </div>
-
-        {error &&
-          <div className="control__message">
-            <p className="control__message-text">{error}</p>
-          </div>
+        {validated &&
+          <i className={controlAlertClasses}></i>
         }
 
       </div>
-    );
-  }
+
+      {error &&
+        <div className="control__message">
+          <p className="control__message-text">{error}</p>
+        </div>
+      }
+
+    </div>
+  );
 
 }
 
