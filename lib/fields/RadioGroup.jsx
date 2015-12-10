@@ -9,7 +9,7 @@ import RadioInput from './Radio';
  * @param   {object} props
  * @returns {ReactElement}
  */
-export default function radioGroup(props) {
+export default function RadioGroup(props) {
   const {name, value, defaultValue, options, ...otherProps} = props;
 
   return (
@@ -27,7 +27,7 @@ export default function radioGroup(props) {
   );
 }
 
-radioGroup.propTypes = {
+RadioGroup.propTypes = {
   name: React.PropTypes.string.isRequired,
   options: React.PropTypes.object.isRequired,
   value: React.PropTypes.string,

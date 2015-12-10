@@ -6,7 +6,7 @@ import CheckboxInput from './Checkbox';
  * @param   {object} props
  * @returns {ReactElement}
  */
-export default function checkboxGroup(props) {
+export default function CheckboxGroup(props) {
   const {name, value, defaultValue, options, ...otherProps} = props;
 
   return (
@@ -25,7 +25,7 @@ export default function checkboxGroup(props) {
   );
 }
 
-checkboxGroup.propTypes = {
+CheckboxGroup.propTypes = {
   name: React.PropTypes.string.isRequired,
   options: React.PropTypes.object.isRequired,
   value: React.PropTypes.array,

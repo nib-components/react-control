@@ -40,20 +40,20 @@ ReactDOM.render(
         <Form.Text/>
       </Form.Control>
 
-      <Form.Control valid validated label="Are you man or boy?">
-        <Form.RadioGroup name="stature" options={{man: 'Man', boy: 'Boy'}} onChange={event => console.log('change' ,event.target.value)} onBlur={event => console.log('blur', event.target.value)}/>
+      <Form.Control valid validated name="stature" label="Are you man or boy?">
+        <Form.RadioGroup options={{man: 'Man', boy: 'Boy'}} onChange={event => console.log('change' ,event.target.value)} onBlur={event => console.log('blur', event.target.value)}/>
       </Form.Control>
 
       <Form.Control label="In what state is your man-palace?">
         <Form.Select options={states} placeholder="Where do you live?"/>
       </Form.Control>
 
-      <Form.Control valid validated label="Can we add you to all of our mailing lists?">
-        <Form.Checkbox name="privacy" value="Yes" label="Yes, send me lots of emails please." />
+      <Form.Control valid validated name="privacy" label="Can we add you to all of our mailing lists?">
+        <Form.Checkbox value="Yes" label="Yes, send me lots of emails please." />
       </Form.Control>
 
-      <Form.Control valid validated label="What extras do you want?">
-        <Form.CheckboxGroup name="blah" options={{dental: 'Dental', physio: 'Physio', optical: "Optical", chiro: "Chiro", massage: "Massage"}}/>
+      <Form.Control valid validated name="blah" label="What extras do you want?">
+        <Form.CheckboxGroup options={{dental: 'Dental', physio: 'Physio', optical: "Optical", chiro: "Chiro", massage: "Massage"}}/>
       </Form.Control>
 
       <Form.Button label="Submit" id="ga-test" />
@@ -72,20 +72,20 @@ ReactDOM.render(
         <Form.Text/>
       </Form.Control>
 
-      <Form.Control valid={false} validated label="Are you man or boy?" error="Liar!">
-        <Form.RadioGroup name="different" defaultValue="man" value="boy" options={{man: 'Man', boy: 'Boy'}}/>
+      <Form.Control valid={false} name="different" validated label="Are you man or boy?" error="Liar!">
+        <Form.RadioGroup defaultValue="man" value="boy" options={{man: 'Man', boy: 'Boy'}}/>
       </Form.Control>
 
       <Form.Control label="In what state is your man-palace?" valid validated>
         <Form.Select options={states} placeholder="Where do you live?"/>
       </Form.Control>
 
-      <Form.Control valid validated label="Can we add you to all of our mailing lists?">
-        <Form.Checkbox name="privacy" value="Yes" label="Yes, send me lots of emails please." />
+      <Form.Control valid validated name="privacy" label="Can we add you to all of our mailing lists?">
+        <Form.Checkbox value="Yes" label="Yes, send me lots of emails please." />
       </Form.Control>
 
-      <Form.Control valid validated label="What extras do you want?">
-        <Form.CheckboxGroup name="blah" value="optical" options={extras}/>
+      <Form.Control valid validated name="blah" label="What extras do you want?">
+        <Form.CheckboxGroup value={['optical']} options={extras}/>
       </Form.Control>
 
       <Form.Button label="Another Button" />
@@ -104,24 +104,24 @@ ReactDOM.render(
         <Form.Text/>
       </Form.Control>
 
-      <Form.Control valid validated label="Are you man or boy?">
-        <Form.RadioGroup name="blah" options={{man: 'Man', boy: 'Boy'}}/>
+      <Form.Control valid validated name="blah" label="Are you man or boy?">
+        <Form.RadioGroup options={{man: 'Man', boy: 'Boy'}}/>
       </Form.Control>
 
       <Form.Control valid={false} validated label="In what state is your man-palace?" error="NSW is the best">
         <Form.Select options={states} placeholder="Where do you live?"/>
       </Form.Control>
 
-      <Form.Control valid validated label="Can we add you to all of our mailing lists?">
-        <Form.Checkbox name="privacy" value="Yes" label="Yes, send me lots of emails please." />
+      <Form.Control valid validated name="privacy" label="Can we add you to all of our mailing lists?">
+        <Form.Checkbox value="Yes" label="Yes, send me lots of emails please." />
       </Form.Control>
 
-      <Form.Control valid validated label="What extras do you want?">
-        <Form.CheckboxGroup name="blah" defaultValue={["optical", "chiro"]} options={{dental: 'Dental', physio: 'Physio', optical: "Optical", chiro: "Chiro", massage: "Massage"}}/>
+      <Form.Control valid validated name="blah" label="What extras do you want?">
+        <Form.CheckboxGroup defaultValue={["optical", "chiro"]} options={{dental: 'Dental', physio: 'Physio', optical: "Optical", chiro: "Chiro", massage: "Massage"}}/>
       </Form.Control>
 
-      <Form.Control valid validated label="What extras do you want?">
-        <Form.CheckboxGroup name="blah" options={extras} />
+      <Form.Control valid validated name="blah" label="What extras do you want?">
+        <Form.CheckboxGroup options={extras} />
       </Form.Control>
 
       <Form.Button label="Submit" />

@@ -34,11 +34,11 @@
     "test.watch": "mocha --recursive --compilers jsx:babel/register --require test/boot.js --watch",
     "build": "babel ./index.js ./lib/*.jsx ./lib/**/*.jsx -d ./dist --source-maps",
     "watch": "babel ./index.js ./lib/*.jsx ./lib/**/*.jsx -d ./dist --watch --source-maps",
-    "example.js.build": "browserify -v --debug -t babelify example/index.js -o example/index.bundled.js",
-    "example.js.watch": "watchify -v --debug -t babelify example/index.js -o example/index.bundled.js",
-    "example.css.build": "sass-composer example/index.scss -o example/index.bundled.css",
-    "example.css.watch": "sass-composer --watch index.scss -o example/index.bundled.css",
-    "example.build": "npm run build && npm run example.js.build && npm run example.css.build",
+    "example.scripts.build": "browserify -v --debug -t babelify example/index.js -o example/index.bundled.js",
+    "example.scripts.watch": "watchify -v --debug -t babelify example/index.js -o example/index.bundled.js",
+    "example.styles.build": "sass-composer example/index.scss -o example/index.bundled.css",
+    "example.styles.watch": "sass-composer --watch index.scss -o example/index.bundled.css",
+    "example.build": "npm run build && npm run example.scripts.build && npm run example.styles.build",
     "deploy": "npm run example.build && firebase deploy",
     "prepublish": "npm run lint && npm run build && npm run test"
   }

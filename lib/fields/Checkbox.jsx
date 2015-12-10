@@ -6,7 +6,7 @@ import classNames from 'classnames';
  * @param   {object} props
  * @returns {ReactElement}
  */
-export default function checkbox(props) {
+export default function Checkbox(props) {
   const {label, ...otherProps} = props;
 
   const checkboxClassNames = classNames('checkbox', {
@@ -22,7 +22,7 @@ export default function checkbox(props) {
   );
 }
 
-checkbox.propTypes = {
+Checkbox.propTypes = {
   name: React.PropTypes.string.isRequired,
   value: React.PropTypes.string.isRequired,
   label: React.PropTypes.string.isRequired,

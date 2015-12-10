@@ -5,7 +5,7 @@ import React from 'react';
  * @param   {object} props
  * @returns {ReactElement}
  */
-export default function select(props) {
+export default function Select(props) {
   const {placeholder, options, ...otherProps} = props;
 
   return (
@@ -23,7 +23,7 @@ export default function select(props) {
 
 }
 
-select.propTypes = {
+Select.propTypes = {
   placeholder: React.PropTypes.string,
   options: React.PropTypes.object.isRequired
 };
