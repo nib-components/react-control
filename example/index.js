@@ -34,6 +34,10 @@ ReactDOM.render(
         <Form.Text/>
       </Form.Control>
 
+      <Form.Control name="areaOfTheText" valid label="Enter a giant block of text"  help="You can add some more rows if you like.">
+        <Form.TextArea rows="4"/>
+      </Form.Control>
+
       <Form.Divider />
 
       <Form.Control valid={false} validated label="Are you man or boy?" error="You are not!">
@@ -66,6 +70,10 @@ ReactDOM.render(
         <Form.Text/>
       </Form.Control>
 
+      <Form.Control name="areaOfTheText" valid label="Enter a giant block of text"  help="You can add some more rows if you like.">
+        <Form.TextArea rows="4"/>
+      </Form.Control>
+
       <Form.Divider />
 
       <Form.Control valid validated label="Are you man or boy?">
@@ -96,6 +104,10 @@ ReactDOM.render(
 
       <Form.Control valid={false} validated label="What's your name" help="We just need your first name." error="Just your name!">
         <Form.Text/>
+      </Form.Control>
+
+      <Form.Control name="areaOfTheText" valid label="Enter a giant block of text"  help="You can add some more rows if you like.">
+        <Form.TextArea rows="4" columns="400"/>
       </Form.Control>
 
       <Form.Divider />
