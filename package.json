@@ -3,11 +3,12 @@
   "version": "0.4.1",
   "main": "./dist/index.js",
   "dependencies": {
+    "@nib-styles/v2-typography": "^3.0.2",
     "classnames": "^2.2.0",
     "react-testutils-query": "^0.5.0"
   },
   "devDependencies": {
-    "@nib-styles/react-form": "^0.0.9",
+    "@nib-styles/react-form": "^0.1.0",
     "babel": "^5.8.29",
     "babelify": "^6.4.0",
     "browserify": "^12.0.0",
@@ -18,6 +19,7 @@
     "eslint-config-jameslnewell": "^0.3.2",
     "mocha": "^2.3.4",
     "react": "^0.14.3",
+    "react-addons-css-transition-group": "^0.14.3",
     "react-addons-test-utils": "^0.14.3",
     "react-dom": "^0.14.0",
     "react-testutils-query": "^0.4.3",

@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import classNames from 'classnames';
 
 import Select from '././fields/Select';
@@ -28,7 +29,7 @@ export default function Control(props) {
   });
 
   return (
-      <div className={controlClasses}>
+    <div className={controlClasses}>
 
       <label className="control__label label">
         {label}
@@ -50,11 +51,17 @@ export default function Control(props) {
 
       </div>
 
-      {error &&
-        <div className="control__message">
-          <p className="control__message-text">{error}</p>
-        </div>
-      }
+      <ReactCSSTransitionGroup
+        transitionName="control-message"
+        transitionEnterTimeout={400}
+        transitionLeaveTimeout={400}
+      >
+        {error &&
+          <div className="control__message">
+            <p className="control__message-text">{error}</p>
+          </div>
+        }
+      </ReactCSSTransitionGroup>
 
     </div>
   );
