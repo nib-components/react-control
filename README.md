@@ -60,6 +60,12 @@ A control component - provides control markup and behaviour.
 <Form.Text></Form.Text>
 ```
 
+### TextArea
+
+```
+<Form.TextArea></Form.TextArea>
+```
+
 ### Select
 
 A select box.
