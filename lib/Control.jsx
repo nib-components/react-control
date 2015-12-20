@@ -35,18 +35,18 @@ export default function Control(props) {
         {label}
       </label>
 
-      {help &&
-        <span className="control__help">{help}</span>
+      {help
+        && <span className="control__help">{help}</span>
       }
 
       <div className={controlInputClasses}>
 
-        {children &&
-          React.cloneElement(children, otherProps)
+        {children
+          && React.cloneElement(children, otherProps)
         }
 
-        {validated &&
-          <i className={controlAlertClasses}></i>
+        {validated
+          && <i className={controlAlertClasses}></i>
         }
 
       </div>
@@ -56,10 +56,12 @@ export default function Control(props) {
         transitionEnterTimeout={400}
         transitionLeaveTimeout={400}
       >
-        {error &&
-          <div className="control__message">
-            <p className="control__message-text">{error}</p>
-          </div>
+        {error
+          && (
+            <div className="control__message">
+              <p className="control__message-text">{error}</p>
+            </div>
+          )
         }
       </ReactCSSTransitionGroup>
 
