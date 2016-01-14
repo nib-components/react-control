@@ -6,20 +6,27 @@ import classNames from 'classnames';
  * @param   {object} props
  * @returns {ReactElement}
  */
-export default function Checkbox(props) {
-  const {label, ...otherProps} = props;
+export default class Checkbox extends React.Component {
+    
+  handleChange(event) {
+    this.props.onChange(event.target.checked);
+  }  
+  
+  render() {
+    const {label, ...otherProps} = this.props;
 
-  const checkboxClassNames = classNames('checkbox', {
-    'checkbox--selected': props.checked
-  });
+    const checkboxClassNames = classNames('checkbox', {
+        'checkbox--selected': this.props.checked
+    });
 
-  return (
-    <div className="checkbox-wrapper">
-      <label className={checkboxClassNames}>
-        <input type="checkbox" className="checkbox__input" {...otherProps}/> {label}
-      </label>
-    </div>
-  );
+    return (
+        <div className="checkbox-wrapper">
+        <label className={checkboxClassNames}>
+            <input type="checkbox" className="checkbox__input" {...otherProps}/> {label}
+        </label>
+        </div>
+    );
+  }
 }
 
 Checkbox.propTypes = {
