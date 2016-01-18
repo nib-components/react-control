@@ -7,66 +7,69 @@ import RadioGroup from './fields/RadioGroup';
 import Checkbox from './fields/Checkbox';
 import CheckboxGroup from './fields/CheckboxGroup';
 
-export default function Control(props) {
+export default class Control extends React.Component {
 
-  const {label, help, error, valid, validated, children, ...otherProps} = props;
+  render() {
 
-  const controlClasses = classNames('control', {
-    [`control--${props.name}`]: props.name,
-    'control--valid': validated && valid,
-    'control--invalid': validated && !valid
-  });
+    const {label, help, error, valid, validated, children, ...otherProps} = this.props;
 
-  const controlInputClasses = classNames('control__input', {
-    'control__input--shrink': children && (children.type === RadioGroup || children.type === Select || children.type === Checkbox)
-  });
+    const controlClasses = classNames('control', {
+      [`control--${this.props.name}`]: this.props.name,
+      'control--valid': validated && valid,
+      'control--invalid': validated && !valid
+    });
 
-  const controlAlertClasses = classNames('control__alert', 'v2-icon', 'v2-icon--smallest', {
-    'v2-icon--tick': valid,
-    'v2-icon--warning-inverse': !valid,
-    'control__alert--outside': children && (children.type === RadioGroup || children.type === Select),
-    'control__alert--checkbox': children.type === CheckboxGroup || children.type === Checkbox
-  });
+    const controlInputClasses = classNames('control__input', {
+      'control__input--shrink': children && (children.type === RadioGroup || children.type === Select || children.type === Checkbox)
+    });
 
-  return (
-    <div className={controlClasses}>
+    const controlAlertClasses = classNames('control__alert', 'v2-icon', 'v2-icon--smallest', {
+      'v2-icon--tick': valid,
+      'v2-icon--warning-inverse': !valid,
+      'control__alert--outside': children && (children.type === RadioGroup || children.type === Select),
+      'control__alert--checkbox': children.type === CheckboxGroup || children.type === Checkbox
+    });
 
-      <label className="control__label label">
-        {label}
-      </label>
+    return (
+      <div className={controlClasses}>
 
-      {help
+        <label className="control__label label">
+          {label}
+        </label>
+
+        {help
         && <span className="control__help">{help}</span>
-      }
+        }
 
-      <div className={controlInputClasses}>
+        <div className={controlInputClasses}>
 
-        {children
+          {children
           && React.cloneElement(children, otherProps)
-        }
+          }
 
-        {validated
+          {validated
           && <i className={controlAlertClasses}></i>
-        }
+          }
 
-      </div>
+        </div>
 
-      <ReactCSSTransitionGroup
-        transitionName="control-message"
-        transitionEnterTimeout={400}
-        transitionLeaveTimeout={400}
-      >
-        {error
+        <ReactCSSTransitionGroup
+          transitionName="control-message"
+          transitionEnterTimeout={400}
+          transitionLeaveTimeout={400}
+        >
+          {error
           && (
             <div className="control__message">
               <p className="control__message-text">{error}</p>
             </div>
           )
-        }
-      </ReactCSSTransitionGroup>
+          }
+        </ReactCSSTransitionGroup>
 
-    </div>
-  );
+      </div>
+    );
+  }
 
 }
 
