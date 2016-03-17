@@ -7,11 +7,11 @@ import classNames from 'classnames';
  * @returns {ReactElement}
  */
 export default function Checkbox(props) {
-  const {label, ...otherProps} = props;
+  const {className, label, ...otherProps} = props;
 
   const checkboxClassNames = classNames('checkbox', {
     'checkbox--selected': props.checked
-  });
+  }, className);
 
   return (
     <div className="checkbox-wrapper">
@@ -23,6 +23,7 @@ export default function Checkbox(props) {
 }
 
 Checkbox.propTypes = {
+  className: React.PropTypes.string,
   name: React.PropTypes.string.isRequired,
   value: React.PropTypes.string.isRequired,
   label: React.PropTypes.string.isRequired,

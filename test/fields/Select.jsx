@@ -7,6 +7,11 @@ const options = {
 
 describe('Select', () => {
 
+  it('should have a class name', () => {
+    const select = $(render(<Select options={options} className="foobar"/>).element);
+    expect(select.hasClass('foobar')).to.be.true;
+  });
+
   it('should have multiple options', () => {
     const select = $(render(<Select options={options}/>).element);
     expect(select.find('option').length).to.be.equal(2);

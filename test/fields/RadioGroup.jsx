@@ -8,6 +8,11 @@ const options = {
 
 describe('RadioGroup', () => {
 
+  it('should have a class name', () => {
+    const select = $(render(<RadioGroup name="gender" options={options} className="foobar"/>).element);
+    expect(select.hasClass('foobar')).to.be.true;
+  });
+
   it('should have multiple radio inputs', () => {
     const radio = $(render(<RadioGroup name="gender" options={options}/>).element);
     expect(radio.find(Radio).length).to.be.equal(2);

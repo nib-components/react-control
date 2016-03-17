@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 
 /**
  * Render a text input
@@ -6,7 +7,12 @@ import React from 'react';
  * @returns {ReactElement}
  */
 export default function Text(props) {
+  const {className} = props;
   return (
-    <input className="textbox" {...props}/>
+    <input className={classNames('textbox', className)} {...props}/>
   );
 }
+
+Text.propTypes = {
+  className: React.PropTypes.string
+};

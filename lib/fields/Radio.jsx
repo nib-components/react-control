@@ -21,6 +21,7 @@ export default function Radio(props) {
 }
 
 Radio.propTypes = {
+  className: React.PropTypes.string,
   name: React.PropTypes.string.isRequired,
   value: React.PropTypes.string.isRequired,
   label: React.PropTypes.string.isRequired,

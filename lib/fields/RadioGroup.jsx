@@ -1,8 +1,9 @@
 import React from 'react';
+import classNames from 'classnames';
 import RadioInput from './Radio';
 
-//FIXME - the radio is never unselected when user selects a different radio
-// => need to maintain state if we're going to make it work without it being hooked up :(
+//FIXME?? maybe dont care tho? - the radio is never unselected when user selects a different radio
+// => need to maintain state if we're going to make it work without it being hooked up to redux :(
 
 /**
  * Render a group of radio inputs
@@ -10,10 +11,10 @@ import RadioInput from './Radio';
  * @returns {ReactElement}
  */
 export default function RadioGroup(props) {
-  const {name, value, defaultValue, options, ...otherProps} = props;
+  const {className, name, value, defaultValue, options, ...otherProps} = props;
 
   return (
-    <div className="radio-group">
+    <div className={classNames('radio-group', className)}>
       {Object.keys(options).map(option => (
         <RadioInput
           {...otherProps}
@@ -28,6 +29,7 @@ export default function RadioGroup(props) {
 }
 
 RadioGroup.propTypes = {
+  className: React.PropTypes.string,
   name: React.PropTypes.string.isRequired,
   options: React.PropTypes.object.isRequired,
   value: React.PropTypes.string,

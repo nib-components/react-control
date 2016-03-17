@@ -2,6 +2,11 @@ import Radio from '../../lib/fields/Radio';
 
 describe('Radio', () => {
 
+  it('should have a class name', () => {
+    const select = $(render(<Radio name="gender" label="Male" className="foobar"/>).element);
+    expect(select.find('.foobar').length).to.be.at.least(1);
+  });
+
   it('should have label text', () => {
     const radio = $(render(<Radio name="gender" label="Male"/>).element);
     expect(radio.hasText('Male')).to.be.true;

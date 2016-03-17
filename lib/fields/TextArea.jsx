@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 
 /**
  * Render a textarea input
@@ -6,7 +7,12 @@ import React from 'react';
  * @returns {ReactElement}
  */
 export default function TextArea(props) {
+  const {className} = props;
   return (
-    <textarea className="textarea" {...props}></textarea>
+    <textarea className={classNames('textarea', className)} {...props}/>
   );
 }
+
+TextArea.propTypes = {
+  className: React.PropTypes.string
+};

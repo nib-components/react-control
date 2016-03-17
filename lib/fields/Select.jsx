@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 
 /**
  * Render a select input
@@ -6,10 +7,10 @@ import React from 'react';
  * @returns {ReactElement}
  */
 export default function Select(props) {
-  const {placeholder, options, ...otherProps} = props;
+  const {className, placeholder, options, ...otherProps} = props;
 
   return (
-    <span className="select">
+    <span className={classNames('select', className)}>
       <select className="select__input" {...otherProps}>
         {placeholder && <option>{placeholder}</option>}
         {Object.keys(options).map(value => (
@@ -24,6 +25,7 @@ export default function Select(props) {
 }
 
 Select.propTypes = {
+  className: React.PropTypes.string,
   placeholder: React.PropTypes.string,
   options: React.PropTypes.object.isRequired
 };

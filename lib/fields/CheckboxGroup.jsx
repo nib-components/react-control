@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import CheckboxInput from './Checkbox';
 
 /**
@@ -7,10 +8,10 @@ import CheckboxInput from './Checkbox';
  * @returns {ReactElement}
  */
 export default function CheckboxGroup(props) {
-  const {name, value, defaultValue, options, ...otherProps} = props;
+  const {className, name, value, defaultValue, options, ...otherProps} = props;
 
   return (
-    <div className="checkbox-group">
+    <div className={classNames('checkbox-group', className)}>
       {Object.keys(options).map(option =>
         <CheckboxInput
           {...otherProps}
@@ -24,6 +25,7 @@ export default function CheckboxGroup(props) {
 }
 
 CheckboxGroup.propTypes = {
+  className: React.PropTypes.string,
   name: React.PropTypes.string.isRequired,
   options: React.PropTypes.object.isRequired,
   value: React.PropTypes.array,

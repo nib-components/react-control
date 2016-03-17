@@ -8,6 +8,11 @@ const options = {
 
 describe('CheckboxGroup', () => {
 
+  it('should have a class name', () => {
+    const select = $(render(<CheckboxGroup name="pets" options={options} className="foobar"/>).element);
+    expect(select.hasClass('foobar')).to.be.true;
+  });
+
   it('should have multiple checkbox inputs', () => {
     const checkbox = $(render(<CheckboxGroup name="pets" options={options}/>).element);
     expect(checkbox.find(Checkbox).length).to.be.equal(2);
