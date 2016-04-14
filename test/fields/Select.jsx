@@ -35,4 +35,25 @@ describe('Select', () => {
     expect(select.find('option').last.hasText('Female')).to.be.true;
   });
 
+  it('should accept an array of objects as options', () => {
+    const optionsArray = [
+      {
+        value: 'APL',
+        text: 'Apple'
+      },
+      {
+        value: 'BAN',
+        text: 'Banana'
+      }
+    ];
+    
+    const select = $(render(<Select options={optionsArray}/>).element);
+    const find = select.find('option');
+    
+    expect(find.first.hasText('Apple')).to.be.true;
+    expect(find.first.hasProp('value', 'APL')).to.be.true;
+    expect(find.last.hasText('Banana')).to.be.true;
+    expect(find.last.hasProp('value', 'BAN')).to.be.true;
+  });
+
 });
