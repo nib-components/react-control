@@ -12,11 +12,11 @@ export default function Select(props) {
 
   let optionsArray = options;
   if (!isArray(options)) {
-    optionsArray = Object.keys(options).map(key => {
-      return {value: key, label: options[key]};
-    });
+    optionsArray = Object.keys(options).map(key => (
+      {value: key, label: options[key]}
+    ));
   }
-  
+
   return (
     <span className={classNames('select', className)}>
       <select className="select__input" {...otherProps}>
@@ -36,12 +36,11 @@ Select.propTypes = {
   className: React.PropTypes.string,
   placeholder: React.PropTypes.string,
   options: React.PropTypes.oneOfType([
-      React.PropTypes.arrayOf(
-          React.PropTypes.shape({
-              value:  React.PropTypes.string,
-              label:   React.PropTypes.string
-          })
-      ),
-      React.PropTypes.objectOf(React.PropTypes.string)
+    React.PropTypes.arrayOf(React.PropTypes.shape({
+      value: React.PropTypes.string,
+      label: React.PropTypes.string
+    })),
+    React.PropTypes.objectOf(React.PropTypes.string)
   ])
 };
+
