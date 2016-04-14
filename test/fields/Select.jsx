@@ -39,11 +39,11 @@ describe('Select', () => {
     const optionsArray = [
       {
         value: 'APL',
-        text: 'Apple'
+        label: 'Apple'
       },
       {
         value: 'BAN',
-        text: 'Banana'
+        label: 'Banana'
       }
     ];
     

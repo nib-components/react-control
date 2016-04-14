@@ -13,7 +13,7 @@ export default function Select(props) {
   let optionsArray = options;
   if (!isArray(options)) {
     optionsArray = Object.keys(options).map(key => {
-      return {value: key, text: options[key]};
+      return {value: key, label: options[key]};
     });
   }
   
@@ -23,7 +23,7 @@ export default function Select(props) {
         {placeholder && <option>{placeholder}</option>}
         {optionsArray.map((element, index) => (
             <option className="select__option" key={index} value={element.value}>
-              {element.text}
+              {element.label}
             </option>
         ))}
       </select>
@@ -35,5 +35,13 @@ export default function Select(props) {
 Select.propTypes = {
   className: React.PropTypes.string,
   placeholder: React.PropTypes.string,
-  options: React.PropTypes.any.isRequired
+  options: React.PropTypes.oneOfType([
+      React.PropTypes.arrayOf(
+          React.PropTypes.shape({
+              value:  React.PropTypes.string,
+              label:   React.PropTypes.string
+          })
+      ),
+      React.PropTypes.objectOf(React.PropTypes.string)
+  ])
 };
