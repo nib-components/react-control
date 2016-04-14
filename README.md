@@ -76,7 +76,21 @@ A select box.
 
 #### Props
 
-- options - An object of `value: "Displayed Text"` pairs *(required)*
+- options - Either: *(required)*
+  - An object containing key-value pairs e.g.
+      ```javascript
+      {
+        male: 'Male',
+        female: 'Female'
+      }
+      ```
+  - An array of objects containing specific keys e.g.
+    ```javascript
+    [
+      {value: 'male', label: 'Male'},
+      {value: 'female', label: 'Female'},
+    ]
+    ```
 - placeholder - Default text for select, with no value
 
 ### Radio

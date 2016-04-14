@@ -48,12 +48,12 @@ describe('Select', () => {
     ];
     
     const select = $(render(<Select options={optionsArray}/>).element);
-    const find = select.find('option');
+    const option = select.find('option');
     
-    expect(find.first.hasText('Apple')).to.be.true;
-    expect(find.first.hasProp('value', 'APL')).to.be.true;
-    expect(find.last.hasText('Banana')).to.be.true;
-    expect(find.last.hasProp('value', 'BAN')).to.be.true;
+    expect(option.first.hasText('Apple')).to.be.true;
+    expect(option.first.hasProp('value', 'APL')).to.be.true;
+    expect(option.last.hasText('Banana')).to.be.true;
+    expect(option.last.hasProp('value', 'BAN')).to.be.true;
   });
 
 });
