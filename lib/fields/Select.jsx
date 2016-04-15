@@ -1,6 +1,5 @@
 import React from 'react';
 import classNames from 'classnames';
-import isArray from 'lodash.isarray';
 
 /**
  * Render a select input
@@ -11,7 +10,7 @@ export default function Select(props) {
   const {className, placeholder, options, ...otherProps} = props;
 
   let optionsArray = options;
-  if (!isArray(options)) {
+  if (!Array.isArray(options)) {
     optionsArray = Object.keys(options).map(key => (
       {value: key, label: options[key]}
     ));
