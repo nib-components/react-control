@@ -16,6 +16,7 @@
     "eslint": "^1.10.1",
     "eslint-config-jameslnewell": "^0.4.4",
     "eslint-plugin-import": "^0.11.0",
+    "eslint-plugin-react": "^3.7.1",
     "mocha": "^2.3.4",
     "react": "^0.14.3",
     "react-addons-test-utils": "^0.14.3",
