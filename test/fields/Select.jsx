@@ -20,19 +20,19 @@ describe('Select', () => {
   it('should have a placeholder option', () => {
     const select = $(render(<Select options={options} placeholder="Please choose your gender..."/>).element);
     expect(select.find('option').length).to.be.equal(3);
-    expect(select.find('option').first.hasText('Please choose your gender...')).to.be.true;
+    expect(select.find('option').hasText('Please choose your gender...')).to.be.true;
   });
 
   it('should set different values on the options', () => {
     const select = $(render(<Select options={options}/>).element);
-    expect(select.find('option').first.hasProp('value', 'male')).to.be.true;
-    expect(select.find('option').last.hasProp('value', 'female')).to.be.true;
+    expect(select.find('option').first().hasProp('value', 'male')).to.be.true;
+    expect(select.find('option').last().hasProp('value', 'female')).to.be.true;
   });
 
   it('should set different labels on the options', () => {
     const select = $(render(<Select options={options}/>).element);
-    expect(select.find('option').first.hasText('Male')).to.be.true;
-    expect(select.find('option').last.hasText('Female')).to.be.true;
+    expect(select.find('option').first().hasText('Male')).to.be.true;
+    expect(select.find('option').last().hasText('Female')).to.be.true;
   });
 
   it('should accept an array of objects as options', () => {
@@ -50,10 +50,10 @@ describe('Select', () => {
     const select = $(render(<Select options={optionsArray}/>).element);
     const option = select.find('option');
     
-    expect(option.first.hasText('Apple')).to.be.true;
-    expect(option.first.hasProp('value', 'APL')).to.be.true;
-    expect(option.last.hasText('Banana')).to.be.true;
-    expect(option.last.hasProp('value', 'BAN')).to.be.true;
+    expect(option.first().hasText('Apple')).to.be.true;
+    expect(option.first().hasProp('value', 'APL')).to.be.true;
+    expect(option.last().hasText('Banana')).to.be.true;
+    expect(option.last().hasProp('value', 'BAN')).to.be.true;
   });
 
 });

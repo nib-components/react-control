@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import RadioInput from './Radio';
+import Radio from './Radio';
 
 //FIXME?? maybe dont care tho? - the radio is never unselected when user selects a different radio
 // => need to maintain state if we're going to make it work without it being hooked up to redux :(
@@ -16,7 +16,7 @@ export default function RadioGroup(props) {
   return (
     <div className={classNames('radio-group', className)}>
       {Object.keys(options).map(option => (
-        <RadioInput
+        <Radio
           {...otherProps}
           key={option}
           name={name} value={option} label={options[option]}

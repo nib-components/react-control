@@ -36,12 +36,12 @@ describe('Form', () => {
 
     it('should not wrap non-Control components', () => {
       const form = $(render(<Form><button>Hi</button></Form>).element);
-      expect(form.children('button').hasText('Hi')).to.be.true;
+      expect(form.find('button').hasText('Hi')).to.be.true;
     });
 
     it('should wrap Control components', () => {
       const form = $(render(<Form><Control><input/></Control></Form>).element);
-      expect(form.children('.form__control').children(Control).length).to.be.equal(1);
+      expect(form.find('.form__control').find(Control).length).to.be.equal(1);
     });
 
   });

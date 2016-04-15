@@ -101,7 +101,7 @@ describe('Control', () => {
       it('should have the label text', () => {
 
         const element = render(
-          <Control label="First name">
+          <Control name="firstName" label="First name">
             <input/>
           </Control>
         ).element;
