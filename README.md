@@ -1,5 +1,7 @@
 # @nib-components/react-form
 
+https://travis-ci.org/nib-components/react-form.svg?branch=master
+
 Components for creating `React` based forms at `nib`.
 
 ## Installation
