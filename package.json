@@ -1,11 +1,10 @@
 {
   "name": "@nib-components/react-form",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "main": "./dist/index.js",
   "dependencies": {
     "classnames": "^2.2.0",
-    "react-addons-css-transition-group": "^0.14.3",
-    "react-testutils-query": "^0.5.0"
+    "react-addons-css-transition-group": "^0.14.3"
   },
   "devDependencies": {
     "@nib-styles/react-form": "^0.1.0",
@@ -14,7 +13,6 @@
     "browserify": "^12.0.0",
     "chai": "^3.4.1",
     "chai-jsx": "^1.0.1",
-    "classnames": "^2.2.0",
     "eslint": "^1.10.1",
     "eslint-config-jameslnewell": "^0.4.3",
     "mocha": "^2.3.4",
@@ -23,7 +21,7 @@
     "react-dom": "^0.14.0",
     "react-testutils-query": "^0.6.1",
     "react-testutils-render": "^0.1.2",
-    "sass-composer": "^2.0.0-beta12",
+    "sass-composer": "^2.0.0-beta14",
     "watchify": "^3.5.0"
   },
   "peerDependencies": {
