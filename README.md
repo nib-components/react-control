@@ -1,6 +1,6 @@
 # @nib-components/react-form
 
-https://travis-ci.org/nib-components/react-form.svg?branch=master
+[![Build Status](https://travis-ci.org/nib-components/react-form.svg?branch=master)](https://travis-ci.org/nib-components/react-form)
 
 Components for creating `React` based forms at `nib`.
 
