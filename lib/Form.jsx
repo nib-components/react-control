@@ -10,7 +10,9 @@ export default class Form extends React.Component {
   }
 
   handleSubmit(event) {
-    event.preventDefault();
+    if (!this.props.action) {
+      event.preventDefault();
+    }
     this.props.onSubmit();
   }
 
