@@ -44,6 +44,11 @@ describe('Form', () => {
       expect(form.find('.form__control').find(Control).length).to.be.equal(1);
     });
 
+    it('should pass through action', () => {
+      const form = $(render(<Form action="someaction"></Form>).element);
+      expect(form.hasProp('action', 'someaction')).to.be.true;
+    });
+
   });
 
 });

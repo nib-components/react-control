@@ -29,7 +29,7 @@ export default class Form extends React.Component {
   }
 
   render() {
-    const {theme, title, children} = this.props;
+    const {theme, title, children, ...other} = this.props;
 
     const formClassNames = classNames('form', {
       'form--elizabeth': theme === 'green',
@@ -38,7 +38,7 @@ export default class Form extends React.Component {
     });
 
     return (
-      <form className={formClassNames} onSubmit={this.handleSubmit}>
+      <form {...other} className={formClassNames} onSubmit={this.handleSubmit}>
         {this.renderTitle(title)}
         {this.renderChildren(children)}
       </form>
