@@ -22,4 +22,14 @@ describe('Radio', () => {
     expect(radio.hasClass('radio--selected')).to.be.true;
   });
 
+  it('should have a class name of radio--disabled when disabled', () => {
+    const radio = $(render(<Radio name="gender" label="Male" disabled/>).element);
+    expect(radio.hasClass('radio--disabled')).to.be.true;
+  });
+
+  it('should not appear disabled when radio not disabled', () => {
+    const radio = $(render(<Radio name="gender" label="Male"/>).element);
+    expect(radio.hasClass('radio--disabled')).to.be.false;
+  });
+
 });
