@@ -12,7 +12,9 @@ export default class Control extends React.Component {
   render() {
 
     const {label, help, error, valid, validated, children, ...otherProps} = this.props;
-
+    const dataTestAttributeValue = this.props['data-test'];
+    otherProps['data-test'] = dataTestAttributeValue ? 'input' : null; // Value to be passed to children
+    
     const controlClasses = classNames('control', {
       [`control--${this.props.name}`]: this.props.name,
       'control--valid': validated && valid,
@@ -31,14 +33,14 @@ export default class Control extends React.Component {
     });
 
     return (
-      <div className={controlClasses}>
+      <div className={controlClasses} data-test={dataTestAttributeValue ? `${dataTestAttributeValue}-control` : null}>
 
-        <label className="control__label label">
+        <label className="control__label label" data-test={dataTestAttributeValue ? 'label' : null}>
           {label}
         </label>
 
         {help
-        && <span className="control__help">{help}</span>
+        && <span className="control__help" data-test={dataTestAttributeValue ? 'help' : null}>{help}</span>
         }
 
         <div className={controlInputClasses}>
@@ -48,7 +50,7 @@ export default class Control extends React.Component {
           }
 
           {validated
-          && <i className={controlAlertClasses}></i>
+          && <i className={controlAlertClasses} data-test={dataTestAttributeValue ? 'alert' : null}></i>
           }
 
         </div>
@@ -60,8 +62,8 @@ export default class Control extends React.Component {
         >
           {error
           && (
-            <div className="control__message">
-              <p className="control__message-text">{error}</p>
+            <div className="control__message" data-test={dataTestAttributeValue ? 'message' : null}>
+              <p className="control__message-text" data-test={dataTestAttributeValue ? 'message-text' : null}>{error}</p>
             </div>
           )
           }

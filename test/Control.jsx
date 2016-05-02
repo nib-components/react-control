@@ -93,7 +93,29 @@ describe('Control', () => {
         expect($(element).hasClass('control--invalid')).to.be.true;
     
       });
-  
+      
+      it('should have data-test attribute when data-test attribute is present', () => {
+        const attrValue = 'test-attr';
+        const element = render(
+          <Control name="name" validated data-test={attrValue}>
+            <input/>
+          </Control>
+        ).element;
+        
+        expect($(element).hasProp('data-test', `${attrValue}-control`)).to.be.true;
+      });
+      
+      it('should have data-test attribute set to null when data-test attribute is not present', () => {
+        
+        const element = render(
+          <Control name="name">
+            <input/>
+          </Control>
+        ).element;
+        
+        expect($(element).hasProp('data-test'), null).to.be.true;
+      });
+      
     });
 
     describe('=> control__label', () => {
@@ -109,7 +131,29 @@ describe('Control', () => {
         expect($(element).find('.control__label').hasText('First name')).to.be.true;
 
       });
-
+      
+      it('should have data-test attribute when data-test attribute is present', () => {
+        const attrValue = 'test-attr';
+        const element = render(
+          <Control name="name" validated data-test={attrValue}>
+            <input/>
+          </Control>
+        ).element;
+        
+        expect($(element).find('.control__label').hasProp('data-test', 'label')).to.be.true;
+      });
+      
+      it('should have data-test attribute set to null when data-test attribute is not present', () => {
+        
+        const element = render(
+          <Control name="name">
+            <input/>
+          </Control>
+        ).element;
+        
+        expect($(element).find('.control__label').hasProp('data-test'), null).to.be.true;
+      });
+      
     });
 
     describe('=> control__help', () => {
@@ -136,6 +180,28 @@ describe('Control', () => {
 
         expect($(element).find('.control__help').hasText('Just your first name')).to.be.true;
 
+      });
+      
+      it('should have data-test attribute when data-test attribute is present', () => {
+        const attrValue = 'test-attr';
+        const element = render(
+          <Control name="name" help="Help, this control is need of browser testing!" validated data-test={attrValue}>
+            <input/>
+          </Control>
+        ).element;
+        
+        expect($(element).find('.control__help').hasProp('data-test', 'help')).to.be.true;
+      });
+      
+      it('should have data-test attribute set to null when data-test attribute is not present', () => {
+        
+        const element = render(
+          <Control name="name" help="Help, this control is need of browser testing!">
+            <input/>
+          </Control>
+        ).element;
+        
+        expect($(element).find('.control__help').hasProp('data-test'), null).to.be.true;
       });
 
     });
@@ -188,6 +254,28 @@ describe('Control', () => {
 
         expect($(element).find('.control__input').hasClass('control__input--shrink')).to.be.true;
 
+      });
+      
+      it('should have data-test attribute when data-test attribute is present', () => {
+        const attrValue = 'test-attr';
+        const element = render(
+          <Control name="name" validated data-test={attrValue}>
+            <input/>
+          </Control>
+        ).element;
+        
+        expect($(element).find('input').hasProp('data-test', 'input')).to.be.true;
+      });
+      
+      it('should have data-test attribute set to null when data-test attribute is not present', () => {
+        
+        const element = render(
+          <Control name="name">
+            <input/>
+          </Control>
+        ).element;
+        
+        expect($(element).find('input').hasProp('data-test', null)).to.be.true;
       });
 
     });
@@ -277,7 +365,29 @@ describe('Control', () => {
         expect($(element).find('.control__alert').hasClass('control__alert--checkbox')).to.be.true;
 
       });
-
+      
+      it('should have data-test attribute when data-test attribute is present', () => {
+        const attrValue = 'test-attr';
+        const element = render(
+          <Control name="name" validated data-test={attrValue}>
+            <input/>
+          </Control>
+        ).element;
+        
+        expect($(element).find('.control__alert').hasProp('data-test', 'alert')).to.be.true;
+      });
+      
+      it('should have data-test attribute set to null when data-test attribute is not present', () => {
+        
+        const element = render(
+          <Control name="name" validated>
+            <input/>
+          </Control>
+        ).element;
+        
+        expect($(element).find('.control__alert').hasProp('data-test', null)).to.be.true;
+      });
+      
     });
 
     describe('=> control__message', () => {
@@ -310,6 +420,30 @@ describe('Control', () => {
 
         expect($(element).find('.control__message').hasText('Oh!')).to.be.true;
 
+      });
+
+      it('should have data-test attribute when data-test attribute is present', () => {
+        const attrValue = 'test-attr';
+        const element = render(
+          <Control name="name" data-test={attrValue} error="The browser tests are broken!">
+            <input/>
+          </Control>
+        ).element;
+        
+        expect($(element).find('.control__message').hasProp('data-test', 'message')).to.be.true;
+        expect($(element).find('.control__message-text').hasProp('data-test', 'message-text')).to.be.true;
+      });
+      
+      it('should have data-test attribute set to null when data-test attribute is not present', () => {
+        
+        const element = render(
+          <Control name="name" error="The browser tests are broken!">
+            <input/>
+          </Control>
+        ).element;
+        
+        expect($(element).find('.control__message').hasProp('data-test', null)).to.be.true;
+        expect($(element).find('.control__message-text').hasProp('data-test', null)).to.be.true;
       });
 
     });
