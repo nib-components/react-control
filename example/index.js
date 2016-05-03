@@ -62,6 +62,10 @@ ReactDOM.render(
         <Form.CheckboxGroup options={{dental: 'Dental', physio: 'Physio', optical: "Optical", chiro: "Chiro", massage: "Massage"}}/>
       </Form.Control>
 
+      <Form.Control valid validated name="testattr" label="So you want to browser test your web app?" data-test="blah">
+        <Form.CheckboxGroup options={{dental: 'Dental', physio: 'Physio', optical: "Optical", chiro: "Chiro", massage: "Massage"}}/>
+      </Form.Control>
+
       <Form.Button label="Submit" />
 
     </Form>

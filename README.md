@@ -55,6 +55,9 @@ A control component - provides control markup and behaviour.
 - error - An error displayed to the user
 - valid - Whether the control is valid
 - validated - Whether the user has interacted and left the field
+- data-test - The value to use for the data-test attribute on the control. 
+Each child will get a data-test attribute if it is specified. 
+Helpful for attaching browser testing frameworks to the DOM. *(optional)*
 
 ### Text
 
