@@ -32,6 +32,12 @@ RadioGroup.propTypes = {
   className: React.PropTypes.string,
   name: React.PropTypes.string.isRequired,
   options: React.PropTypes.object.isRequired,
-  value: React.PropTypes.string,
-  defaultValue: React.PropTypes.string
+  value: React.PropTypes.oneOfType([
+    React.PropTypes.string,
+    React.PropTypes.number
+  ]),
+  defaultValue: React.PropTypes.oneOfType([
+    React.PropTypes.string,
+    React.PropTypes.number
+  ])
 };
