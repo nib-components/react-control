@@ -20,8 +20,8 @@ export default function RadioGroup(props) {
           {...otherProps}
           key={option}
           name={name} value={option} label={options[option]}
-          checked={typeof value !== 'undefined' ? option == value : null}
-          defaultChecked={option == defaultValue}
+          checked={typeof value !== 'undefined' ? option == value : null} //eslint-disable-line eqeqeq
+          defaultChecked={option == defaultValue} //eslint-disable-line eqeqeq
         />
       ))}
     </div>
