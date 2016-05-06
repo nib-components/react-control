@@ -29,9 +29,9 @@ export default class Form extends React.Component {
   }
 
   render() {
-    const {theme, title, children} = this.props;
+    const {theme, title, className, children} = this.props;
 
-    const formClassNames = classNames('form', {
+    const formClassNames = classNames('form', className, {
       'form--elizabeth': theme === 'green',
       'form--white': theme === 'white',
       'form--grey': theme === 'grey'
@@ -50,7 +50,8 @@ export default class Form extends React.Component {
 Form.propTypes = {
   theme: React.PropTypes.oneOf(['white', 'grey', 'green']),
   title: React.PropTypes.string,
-  onSubmit: React.PropTypes.func
+  onSubmit: React.PropTypes.func,
+  className: React.PropTypes.string
 };
 
 Form.defaultProps = {

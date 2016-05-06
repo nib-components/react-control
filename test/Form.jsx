@@ -1,7 +1,7 @@
 import Form from '../lib/Form';
 import Control from '../lib/Control';
 
-describe('Form', () => {
+describe.only('Form', () => {
 
   describe('.handleSubmit()', () => {
 
@@ -32,6 +32,11 @@ describe('Form', () => {
     it('should have a title when I pass a title', () => {
       const form = $(render(<Form title="My form"/>).element);
       expect(form.find('.form__title').hasText('My form')).to.be.true;
+    });
+
+    it('should have a custom class name when I pass a className', () => {
+      const form = $(render(<Form className="form--my-account"/>).element);
+      expect(form.hasClass('form--my-account')).to.be.true;
     });
 
     it('should not wrap non-Control components', () => {
