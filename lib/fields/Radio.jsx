@@ -26,6 +26,6 @@ Radio.propTypes = {
   name: React.PropTypes.string.isRequired,
   value: React.PropTypes.string.isRequired,
   label: React.PropTypes.string.isRequired,
-  checked: React.PropTypes.bool,
+  checked: React.PropTypes.bool,npm
   disabled: React.PropTypes.bool
 };

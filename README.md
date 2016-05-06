@@ -139,7 +139,7 @@ A horizontal rule.
 
 ## Change log
 
-### 0.8.0
+### 0.11.0
 
 - added the ability to add a custom `className` to a `Form`
 
