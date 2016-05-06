@@ -4,7 +4,27 @@ import Control from '../lib/Control';
 describe.only('Form', () => {
 
   describe('.handleSubmit()', () => {
+    it('should prevent the default event by default', () => {
+      const event = { preventDefault: sinon.spy() };
+      const rendered = render(<Form></Form>).component;
+      rendered.handleSubmit(event);
+      expect(event.preventDefault).to.be.calledOnce;
+    });
 
+    it('should not prevent the default event when action provided', () => {
+      const event = { preventDefault: sinon.spy() };
+      const rendered = render(<Form action="someaction"></Form>).component;
+      rendered.handleSubmit(event);
+      expect(event.preventDefault).to.not.be.called;
+    });
+
+    it('should call onSubmit', () => {
+      const event = { preventDefault: sinon.spy() };
+      const onSubmit = sinon.spy();
+      const rendered = render(<Form onSubmit={onSubmit}></Form>).component;
+      rendered.handleSubmit(event);
+      expect(onSubmit).to.be.calledOnce;
+    });
   });
 
   describe('.render()', () => {
@@ -47,6 +67,11 @@ describe.only('Form', () => {
     it('should wrap Control components', () => {
       const form = $(render(<Form><Control><input/></Control></Form>).element);
       expect(form.find('.form__control').find(Control).length).to.be.equal(1);
+    });
+
+    it('should pass through action', () => {
+      const form = $(render(<Form action="someaction"></Form>).element);
+      expect(form.hasProp('action', 'someaction')).to.be.true;
     });
 
   });

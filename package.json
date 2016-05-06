@@ -1,6 +1,6 @@
 {
   "name": "@nib-components/react-form",
-  "version": "0.7.2",
+  "version": "0.10.2",
   "main": "./dist/index.js",
   "dependencies": {
     "classnames": "^2.2.0",
@@ -24,6 +24,8 @@
     "react-testutils-query": "^0.6.3",
     "react-testutils-render": "^0.1.2",
     "sass-composer": "^2.0.0-beta14",
+    "sinon": "^1.17.3",
+    "sinon-chai": "^2.8.0",
     "watchify": "^3.5.0"
   },
   "peerDependencies": {

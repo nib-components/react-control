@@ -20,8 +20,8 @@ export default function RadioGroup(props) {
           {...otherProps}
           key={option}
           name={name} value={option} label={options[option]}
-          checked={typeof value !== 'undefined' ? option === value : null}
-          defaultChecked={option === defaultValue}
+          checked={typeof value !== 'undefined' ? option == value : null} //eslint-disable-line eqeqeq
+          defaultChecked={option == defaultValue} //eslint-disable-line eqeqeq
         />
       ))}
     </div>
@@ -32,6 +32,12 @@ RadioGroup.propTypes = {
   className: React.PropTypes.string,
   name: React.PropTypes.string.isRequired,
   options: React.PropTypes.object.isRequired,
-  value: React.PropTypes.string,
-  defaultValue: React.PropTypes.string
+  value: React.PropTypes.oneOfType([
+    React.PropTypes.string,
+    React.PropTypes.number
+  ]),
+  defaultValue: React.PropTypes.oneOfType([
+    React.PropTypes.string,
+    React.PropTypes.number
+  ])
 };

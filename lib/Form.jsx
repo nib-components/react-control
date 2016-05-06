@@ -10,7 +10,9 @@ export default class Form extends React.Component {
   }
 
   handleSubmit(event) {
-    event.preventDefault();
+    if (!this.props.action) {
+      event.preventDefault();
+    }
     this.props.onSubmit();
   }
 
@@ -29,7 +31,7 @@ export default class Form extends React.Component {
   }
 
   render() {
-    const {theme, title, className, children} = this.props;
+    const {theme, title, className, children, ...other} = this.props;
 
     const formClassNames = classNames('form', className, {
       'form--elizabeth': theme === 'green',
@@ -38,7 +40,7 @@ export default class Form extends React.Component {
     });
 
     return (
-      <form className={formClassNames} onSubmit={this.handleSubmit}>
+      <form {...other} className={formClassNames} onSubmit={this.handleSubmit}>
         {this.renderTitle(title)}
         {this.renderChildren(children)}
       </form>

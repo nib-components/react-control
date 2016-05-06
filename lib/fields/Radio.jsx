@@ -10,7 +10,8 @@ export default function Radio(props) {
   const {label, ...otherProps} = props;
 
   const radioClassNames = classNames('radio', {
-    'radio--selected': props.checked
+    'radio--selected': props.checked,
+    'radio--disabled': props.disabled
   });
 
   return (
