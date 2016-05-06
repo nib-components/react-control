@@ -1,7 +1,7 @@
 import Form from '../lib/Form';
 import Control from '../lib/Control';
 
-describe.only('Form', () => {
+describe('Form', () => {
 
   describe('.handleSubmit()', () => {
     it('should prevent the default event by default', () => {

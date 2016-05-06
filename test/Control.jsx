@@ -8,9 +8,9 @@ describe('Control', () => {
 
   describe('.render()', () => {
 
-    describe('=> control', () => {
+    describe.only('=> control', () => {
 
-      it('should have the `control--name`', () => {
+      it('should have the `control--name` class', () => {
 
         const element = render(
           <Control name="name">
@@ -21,7 +21,7 @@ describe('Control', () => {
         expect($(element).hasClass('control--name')).to.be.true;
 
       });
-  
+
       it('should not have the `control--valid` class when the control is not validated', () => {
     
         const element = render(
@@ -93,7 +93,31 @@ describe('Control', () => {
         expect($(element).hasClass('control--invalid')).to.be.true;
     
       });
-  
+
+      it('should have the `control--disabled` class when disabled=true', () => {
+
+        const element = render(
+          <Control name="name" disabled>
+            <input/>
+          </Control>
+        ).element;
+
+        expect($(element).hasClass('control--disabled')).to.be.true;
+
+      });
+
+      it('should not have the `control--disabled` class when disabled=false', () => {
+
+        const element = render(
+          <Control name="name">
+            <input/>
+          </Control>
+        ).element;
+
+        expect($(element).hasClass('control--disabled')).to.be.false;
+
+      });
+
     });
 
     describe('=> control__label', () => {

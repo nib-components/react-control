@@ -10,11 +10,11 @@ import CheckboxGroup from './fields/CheckboxGroup';
 export default class Control extends React.Component {
 
   render() {
-
     const {label, help, error, valid, validated, children, ...otherProps} = this.props;
 
     const controlClasses = classNames('control', {
       [`control--${this.props.name}`]: this.props.name,
+      'control--disabled': this.props.disabled,
       'control--valid': validated && valid,
       'control--invalid': validated && !valid
     });
@@ -80,6 +80,7 @@ Control.propTypes = {
   error: React.PropTypes.string,
   valid: React.PropTypes.bool,
   validated: React.PropTypes.bool,
+  disabled: React.PropTypes.bool,
   children: React.PropTypes.element.isRequired
 };
 
