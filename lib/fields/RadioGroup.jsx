@@ -13,8 +13,12 @@ import Radio from './Radio';
 export default function RadioGroup(props) {
   const {className, name, value, defaultValue, options, ...otherProps} = props;
 
+  const inputClassNames = classNames('radio-group', {
+    'radio-group--disabled': props.disabled
+  }, className);
+
   return (
-    <div className={classNames('radio-group', className)}>
+    <div className={inputClassNames}>
       {Object.keys(options).map(option => (
         <Radio
           {...otherProps}

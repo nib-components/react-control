@@ -10,7 +10,8 @@ export default function Checkbox(props) {
   const {className, label, ...otherProps} = props;
 
   const checkboxClassNames = classNames('checkbox', {
-    'checkbox--selected': props.checked
+    'checkbox--selected': props.checked,
+    'checkbox--disabled': props.disabled
   }, className);
 
   return (

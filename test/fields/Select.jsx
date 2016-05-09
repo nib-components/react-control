@@ -56,4 +56,14 @@ describe('Select', () => {
     expect(option.last().hasProp('value', 'BAN')).to.be.true;
   });
 
+  it('should have a disabled class when the input is disabled', () => {
+    const select = $(render(<Select options={options} disabled/>).element);
+    expect(select.hasClass('select--disabled')).to.be.true;
+  });
+
+  it('should not have a disabled class when the input is not disabled', () => {
+    const select = $(render(<Select options={options}/>).element);
+    expect(select.hasClass('select--disabled')).to.be.false;
+  });
+
 });

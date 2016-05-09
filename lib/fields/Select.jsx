@@ -16,8 +16,12 @@ export default function Select(props) {
     ));
   }
 
+  const inputClassNames = classNames('select', {
+    'select--disabled': props.disabled
+  }, className);
+
   return (
-    <span className={classNames('select', className)}>
+    <span className={inputClassNames}>
       <select className="select__input" {...otherProps}>
         {placeholder && <option>{placeholder}</option>}
         {optionsArray.map((element, index) => (

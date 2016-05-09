@@ -8,8 +8,13 @@ import classNames from 'classnames';
  */
 export default function Text(props) {
   const {className} = props;
+
+  const inputClassNames = classNames('textbox', {
+    'textbox--disabled': props.disabled
+  }, className);
+
   return (
-    <input className={classNames('textbox', className)} {...props}/>
+    <input className={inputClassNames} {...props}/>
   );
 }
 

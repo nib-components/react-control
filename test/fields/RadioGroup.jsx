@@ -61,4 +61,14 @@ describe('RadioGroup', () => {
     expect(group.find(Radio).last().hasProp('defaultChecked', false)).to.be.true;
   });
 
+  it('should have a disabled class when the input is disabled', () => {
+    const group = $(render(<RadioGroup name="gender" options={options} disabled/>).element);
+    expect(group.hasClass('radio-group--disabled')).to.be.true;
+  });
+
+  it('should not have a disabled class when the input is not disabled', () => {
+    const group = $(render(<RadioGroup name="gender" options={options}/>).element);
+    expect(group.hasClass('radio-group--disabled')).to.be.false;
+  });
+
 });

@@ -10,8 +10,12 @@ import CheckboxInput from './Checkbox';
 export default function CheckboxGroup(props) {
   const {className, name, value, defaultValue, options, ...otherProps} = props;
 
+  const checkboxGroupClassNames = classNames('checkbox-group', {
+    'checkbox-group--disabled': props.disabled
+  }, className);
+
   return (
-    <div className={classNames('checkbox-group', className)}>
+    <div className={checkboxGroupClassNames}>
       {Object.keys(options).map(option =>
         <CheckboxInput
           {...otherProps}

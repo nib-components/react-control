@@ -8,8 +8,13 @@ import classNames from 'classnames';
  */
 export default function TextArea(props) {
   const {className} = props;
+
+  const inputClassNames = classNames('textarea', {
+    'textarea--disabled': props.disabled
+  }, className);
+
   return (
-    <textarea className={classNames('textarea', className)} {...props}/>
+    <textarea className={inputClassNames} {...props}/>
   );
 }
 

@@ -8,8 +8,13 @@ import classNames from 'classnames';
  */
 export default function Password(props) {
   const {className} = props;
+
+  const inputClassNames = classNames('textbox', {
+    'textbox--disabled': props.disabled
+  }, className);
+
   return (
-    <input type="password" className={classNames('textbox', className)} {...props}/>
+    <input type="password" className={inputClassNames} {...props}/>
   );
 }
 

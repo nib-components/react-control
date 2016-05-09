@@ -8,7 +8,7 @@ describe('Control', () => {
 
   describe('.render()', () => {
 
-    describe.only('=> control', () => {
+    describe('=> control', () => {
 
       it('should have the `control--name` class', () => {
 
