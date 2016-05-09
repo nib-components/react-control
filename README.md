@@ -139,6 +139,10 @@ A horizontal rule.
 
 ## Change log
 
+### 0.12.0
+
+- added a `*--disabled` class to each of the components when a `disabled` property is present
+
 ### 0.11.0
 
 - added the ability to add a custom `className` to a `Form`
