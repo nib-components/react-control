@@ -7,12 +7,12 @@ import classNames from 'classnames';
  * @returns {ReactElement}
  */
 export default function Radio(props) {
-  const {label, ...otherProps} = props;
+  const {label, className, ...otherProps} = props;
 
   const radioClassNames = classNames('radio', {
     'radio--selected': props.checked,
     'radio--disabled': props.disabled
-  });
+  }, className);
 
   return (
     <label className={radioClassNames}>

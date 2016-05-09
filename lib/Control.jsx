@@ -19,6 +19,10 @@ export default class Control extends React.Component {
       'control--invalid': validated && !valid
     });
 
+    const controlLabelClasses = classNames('control__label', 'label', {
+      'label--disabled': this.props.disabled
+    });
+
     const controlInputClasses = classNames('control__input', {
       'control__input--shrink': children && (children.type === RadioGroup || children.type === Select || children.type === Checkbox)
     });
@@ -33,7 +37,7 @@ export default class Control extends React.Component {
     return (
       <div className={controlClasses}>
 
-        <label className="control__label label">
+        <label className={controlLabelClasses}>
           {label}
         </label>
 

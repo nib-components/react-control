@@ -139,13 +139,18 @@ A horizontal rule.
 
 ## Change log
 
+### 0.13.0
+
+- add: allow a custom class to be placed on radio elements
+- fix: add a `label--disabled` class when the control is disabled
+
 ### 0.12.0
 
-- added a `*--disabled` class to each of the components when a `disabled` property is present
+- add: a `*--disabled` class to each of the components when a `disabled` property is present
 
 ### 0.11.0
 
-- added the ability to add a custom `className` to a `Form`
+- add: the ability to add a custom `className` to a `Form`
 
 ## To do
 

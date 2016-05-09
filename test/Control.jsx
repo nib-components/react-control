@@ -118,6 +118,30 @@ describe('Control', () => {
 
       });
 
+      it('should have the `label--disabled` class when disabled=true', () => {
+
+        const element = render(
+          <Control name="name" disabled>
+            <input/>
+          </Control>
+        ).element;
+
+        expect($(element).find('.label--disabled').length).to.be.equal(1);
+
+      });
+
+      it('should not have the `control--disabled` class when disabled=false', () => {
+
+        const element = render(
+          <Control name="name">
+            <input/>
+          </Control>
+        ).element;
+
+        expect($(element).find('.label--disabled').length).to.be.equal(0);
+
+      });
+
     });
 
     describe('=> control__label', () => {

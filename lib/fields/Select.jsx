@@ -9,16 +9,16 @@ import classNames from 'classnames';
 export default function Select(props) {
   const {className, placeholder, options, ...otherProps} = props;
 
+  const inputClassNames = classNames('select', {
+    'select--disabled': props.disabled
+  }, className);
+
   let optionsArray = options;
   if (!Array.isArray(options)) {
     optionsArray = Object.keys(options).map(key => (
       {value: key, label: options[key]}
     ));
   }
-
-  const inputClassNames = classNames('select', {
-    'select--disabled': props.disabled
-  }, className);
 
   return (
     <span className={inputClassNames}>
