@@ -51,14 +51,14 @@ describe('CheckboxGroup', () => {
     expect(group.find(Checkbox).last().hasProp('checked', false)).to.be.true;
   });
 
-  it('should set defaultChecked when the defaultValue contains the checkbox value', () => {
+  it('should set checked when the defaultValue contains the checkbox value', () => {
     const group = $(render(<CheckboxGroup name="pets" options={options} defaultValue={['dogs']}/>).element);
-    expect(group.find(Checkbox).first().hasProp('defaultChecked', true)).to.be.true;
+    expect(group.find(Checkbox).first().hasProp('checked', true)).to.be.true;
   });
 
-  it('should not set defaultChecked when the defaultValue contains the checkbox value', () => {
+  it('should not set checked when the defaultValue contains the checkbox value', () => {
     const group = $(render(<CheckboxGroup name="pets" options={options} defaultValue={['dogs']}/>).element);
-    expect(group.find(Checkbox).last().hasProp('defaultChecked', false)).to.be.true;
+    expect(group.find(Checkbox).last().hasProp('checked', false)).to.be.true;
   });
 
   it('should have a disabled class when the input is disabled', () => {

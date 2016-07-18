@@ -16,14 +16,25 @@ export default function CheckboxGroup(props) {
 
   return (
     <div className={checkboxGroupClassNames}>
-      {Object.keys(options).map(option =>
-        <CheckboxInput
-          {...otherProps}
-          key={option} name={name} label={options[option]} value={option}
-          checked={typeof value !== 'undefined' ? value.indexOf(option) !== -1 : null}
-          defaultChecked={typeof defaultValue !== 'undefined' ? defaultValue.indexOf(option) !== -1 : null}
-        />
-      )}
+      {Object.keys(options).map(option => {
+
+        let checked = null;
+        if (typeof value !== 'undefined') {
+          checked = value.indexOf(option) !== -1;
+        } else if (typeof defaultValue !== 'undefined') {
+          checked = defaultValue.indexOf(option) !== -1;
+        }
+
+        return (
+          <CheckboxInput
+            {...otherProps}
+            key={option}
+            name={name} value={option} checked={checked}
+            label={options[option]}
+          />
+        );
+
+      })}
     </div>
   );
 }

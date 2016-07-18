@@ -1,6 +1,6 @@
 {
   "name": "@nib-components/react-form",
-  "version": "0.13.1",
+  "version": "0.13.2",
   "main": "./dist/index.js",
   "dependencies": {
     "classnames": "^2.2.0",

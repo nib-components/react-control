@@ -51,14 +51,14 @@ describe('RadioGroup', () => {
     expect(group.find(Radio).last().hasProp('checked', false)).to.be.true;
   });
 
-  it('should set defaultChecked when the defaultValue is the same as the radio value', () => {
+  it('should set checked when the defaultValue is the same as the radio value', () => {
     const group = $(render(<RadioGroup name="gender" options={options} defaultValue="male"/>).element);
-    expect(group.find(Radio).first().hasProp('defaultChecked', true)).to.be.true;
+    expect(group.find(Radio).first().hasProp('checked', true)).to.be.true;
   });
 
-  it('should not set defaultChecked when the defaultValue is not the same as the radio value', () => {
+  it('should not set checked when the defaultValue is not the same as the radio value', () => {
     const group = $(render(<RadioGroup name="gender" options={options} defaultValue="male"/>).element);
-    expect(group.find(Radio).last().hasProp('defaultChecked', false)).to.be.true;
+    expect(group.find(Radio).last().hasProp('checked', false)).to.be.true;
   });
 
   it('should have a disabled class when the input is disabled', () => {

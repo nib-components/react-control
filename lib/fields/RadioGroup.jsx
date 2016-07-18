@@ -19,15 +19,25 @@ export default function RadioGroup(props) {
 
   return (
     <div className={inputClassNames}>
-      {Object.keys(options).map(option => (
-        <Radio
-          {...otherProps}
-          key={option}
-          name={name} value={option} label={options[option]}
-          checked={typeof value !== 'undefined' ? option == value : null} //eslint-disable-line eqeqeq
-          defaultChecked={option == defaultValue} //eslint-disable-line eqeqeq
-        />
-      ))}
+      {Object.keys(options).map(option => {
+
+        let checked = null;
+        if (typeof value !== 'undefined') {
+          checked = option == value; //eslint-disable-line eqeqeq
+        } else if (typeof defaultValue !== 'undefined') {
+          checked = option == defaultValue; //eslint-disable-line eqeqeq
+        }
+
+        return (
+          <Radio
+            {...otherProps}
+            key={option}
+            name={name} value={option} checked={checked}
+            label={options[option]}
+          />
+      );
+      
+      })}
     </div>
   );
 }
