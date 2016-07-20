@@ -1,6 +1,6 @@
 {
   "name": "@nib-components/react-form",
-  "version": "0.13.2",
+  "version": "0.14.0",
   "main": "./dist/index.js",
   "dependencies": {
     "classnames": "^2.2.0",
@@ -42,7 +42,6 @@
     "example.styles.build": "sass-composer example/index.scss -o example/index.bundled.css",
     "example.styles.watch": "sass-composer --watch index.scss -o example/index.bundled.css",
     "example.build": "npm run build && npm run example.scripts.build && npm run example.styles.build",
-    "deploy": "npm run example.build && firebase deploy",
     "prepublish": "npm run lint && npm run build && npm run test"
   }
 }

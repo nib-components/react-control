@@ -139,6 +139,11 @@ A horizontal rule.
 
 ## Change log
 
+### 0.14.0
+
+- add: strip additional properties passed down by `redux-formo` to avoid [Unkown Prop Warning](https://facebook
+.github.io/react/warnings/unknown-prop.html) emitted by `react@>=15.2` 
+
 ### 0.13.0
 
 - add: allow a custom class to be placed on radio elements

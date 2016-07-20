@@ -10,7 +10,17 @@ import CheckboxGroup from './fields/CheckboxGroup';
 export default class Control extends React.Component {
 
   render() {
-    const {label, help, error, valid, validated, children, ...otherProps} = this.props;
+    const {
+      label, help, error, valid, validated, children,
+
+      //redux-formo methods
+      focus, blur, change, filter, validate, ////eslint-disable
+      
+      //redux-formo props
+      initialised, active, filtering, filtered, validating, /*validated,*/ lastValidValue, ////eslint-disable
+
+      ...otherProps
+    } = this.props;
 
     const controlClasses = classNames('control', {
       [`control--${this.props.name}`]: this.props.name,
