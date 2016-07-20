@@ -14,7 +14,7 @@ export default class Control extends React.Component {
       label, help, error, valid, validated, children,
 
       //redux-formo methods
-      focus, blur, change, filter, validate, ////eslint-disable
+      initialise, focus, blur, change, filter, validate, ////eslint-disable
       
       //redux-formo props
       initialised, active, filtering, filtered, validating, /*validated,*/ lastValidValue, ////eslint-disable

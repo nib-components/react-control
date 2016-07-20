@@ -139,6 +139,10 @@ A horizontal rule.
 
 ## Change log
 
+### 0.14.1
+
+- fix: ignore additional `redux-formo` props
+
 ### 0.14.0
 
 - add: strip additional properties passed down by `redux-formo` to avoid [Unkown Prop Warning](https://facebook
