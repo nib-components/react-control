@@ -139,6 +139,10 @@ A horizontal rule.
 
 ## Change log
 
+### 0.14.2
+
+- fix: no longer require a `name` prop on a `Control`
+
 ### 0.14.1
 
 - fix: ignore additional `redux-formo` props
@@ -146,7 +150,7 @@ A horizontal rule.
 ### 0.14.0
 
 - add: strip additional properties passed down by `redux-formo` to avoid [Unkown Prop Warning](https://facebook
-.github.io/react/warnings/unknown-prop.html) emitted by `react@>=15.2` 
+.github.io/react/warnings/unknown-prop.html) emitted by `react@>=15.2`
 
 ### 0.13.0
 

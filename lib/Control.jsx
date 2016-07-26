@@ -14,10 +14,10 @@ export default class Control extends React.Component {
       label, help, error, valid, validated, children,
 
       //redux-formo methods
-      initialise, focus, blur, change, filter, validate, ////eslint-disable
-      
+      initialise, focus, blur, change, filter, validate, //eslint-disable-line
+
       //redux-formo props
-      initialised, active, filtering, filtered, validating, /*validated,*/ lastValidValue, ////eslint-disable
+      initialised, active, filtering, filtered, validating, /*validated,*/ lastValidValue, //eslint-disable-line
 
       ...otherProps
     } = this.props;
@@ -88,7 +88,7 @@ export default class Control extends React.Component {
 }
 
 Control.propTypes = {
-  name: React.PropTypes.string.isRequired,
+  name: React.PropTypes.string,
   label: React.PropTypes.string.isRequired,
   help: React.PropTypes.string,
   error: React.PropTypes.string,

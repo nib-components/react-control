@@ -10,7 +10,7 @@ describe('Control', () => {
 
     describe('=> control', () => {
 
-      it('should have the `control--name` class', () => {
+      it('should have a `control--%name%` class when a name is provided', () => {
 
         const element = render(
           <Control name="name">
@@ -22,76 +22,88 @@ describe('Control', () => {
 
       });
 
+      it('should not have a `control--%name%` class when a name is not provided', () => {
+
+        const element = render(
+          <Control>
+            <input/>
+          </Control>
+        ).element;
+
+        expect($(element).hasClass('control--')).to.be.false;
+
+      });
+
       it('should not have the `control--valid` class when the control is not validated', () => {
-    
+
         const element = render(
           <Control name="name" validated={false} valid>
             <input/>
           </Control>
         ).element;
-    
+
         expect($(element).hasClass('control--valid')).to.be.false;
-    
+
       });
-  
+
       it('should not have the `control--valid` class when the control is not valid', () => {
-    
+
         const element = render(
           <Control name="name" validated valid={false}>
             <input/>
           </Control>
         ).element;
-    
+
         expect($(element).hasClass('control--valid')).to.be.false;
-    
+
       });
-  
+
       it('should have the `control--valid` class when the control has been validated and is valid', () => {
-    
+
         const element = render(
           <Control name="name" validated valid>
             <input/>
           </Control>
         ).element;
-    
+
         expect($(element).hasClass('control--valid')).to.be.true;
-    
+
       });
-  
+
       it('should not have the `control--invalid` class when the control is not invalidated', () => {
-    
+
         const element = render(
           <Control name="name" validated={false} valid>
             <input/>
           </Control>
         ).element;
-    
+
         expect($(element).hasClass('control--invalid')).to.be.false;
-    
+
       });
-  
+
       it('should not have the `control--invalid` class when the control is valid', () => {
-    
+
         const element = render(
           <Control name="name" validated valid>
             <input/>
           </Control>
         ).element;
-    
+
         expect($(element).hasClass('control--invalid')).to.be.false;
-    
+
       });
-  
+
       it('should have the `control--invalid` class when the control has been invalidated and is invalid', () => {
-    
+
         const element = render(
           <Control name="name" validated valid={false}>
             <input/>
           </Control>
         ).element;
-    
+
         expect($(element).hasClass('control--invalid')).to.be.true;
-    
+
       });
 
       it('should have the `control--disabled` class when disabled=true', () => {
