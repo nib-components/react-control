@@ -44,5 +44,6 @@ CheckboxGroup.propTypes = {
   name: React.PropTypes.string.isRequired,
   options: React.PropTypes.object.isRequired,
   value: React.PropTypes.array,
-  defaultValue: React.PropTypes.array
+  defaultValue: React.PropTypes.array,
+  disabled: React.PropTypes.bool
 };

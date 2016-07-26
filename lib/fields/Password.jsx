@@ -19,5 +19,6 @@ export default function Password(props) {
 }
 
 Password.propTypes = {
-  className: React.PropTypes.string
+  className: React.PropTypes.string,
+  disabled: React.PropTypes.bool
 };

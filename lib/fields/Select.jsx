@@ -32,7 +32,7 @@ export default function Select(props) {
       </select>
     </span>
   );
-    
+
 }
 
 Select.propTypes = {
@@ -44,6 +44,6 @@ Select.propTypes = {
       label: React.PropTypes.string
     })),
     React.PropTypes.objectOf(React.PropTypes.string)
-  ])
+  ]),
+  disabled: React.PropTypes.bool
 };
-

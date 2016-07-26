@@ -36,7 +36,7 @@ export default function RadioGroup(props) {
             label={options[option]}
           />
       );
-      
+
       })}
     </div>
   );
@@ -53,5 +53,6 @@ RadioGroup.propTypes = {
   defaultValue: React.PropTypes.oneOfType([
     React.PropTypes.string,
     React.PropTypes.number
-  ])
+  ]),
+  disabled: React.PropTypes.bool
 };

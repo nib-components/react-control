@@ -19,5 +19,6 @@ export default function Text(props) {
 }
 
 Text.propTypes = {
-  className: React.PropTypes.string
+  className: React.PropTypes.string,
+  disabled: React.PropTypes.bool
 };
