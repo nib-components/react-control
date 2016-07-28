@@ -11,7 +11,7 @@ import Radio from './Radio';
  * @returns {ReactElement}
  */
 export default function RadioGroup(props) {
-  const {className, name, value, defaultValue, options, ...otherProps} = props;
+  const {className, name, value, options, ...otherProps} = props;
 
   const inputClassNames = classNames('radio-group', {
     'radio-group--disabled': props.disabled
@@ -20,14 +20,7 @@ export default function RadioGroup(props) {
   return (
     <div className={inputClassNames}>
       {Object.keys(options).map(option => {
-
-        let checked = null;
-        if (typeof value !== 'undefined') {
-          checked = option == value; //eslint-disable-line eqeqeq
-        } else if (typeof defaultValue !== 'undefined') {
-          checked = option == defaultValue; //eslint-disable-line eqeqeq
-        }
-
+        const checked = option == value; //eslint-disable-line eqeqeq
         return (
           <Radio
             {...otherProps}
@@ -35,8 +28,7 @@ export default function RadioGroup(props) {
             name={name} value={option} checked={checked}
             label={options[option]}
           />
-      );
-
+        );
       })}
     </div>
   );

@@ -35,7 +35,7 @@ describe('CheckboxGroup', () => {
     expect(group.find(Checkbox).last().hasProp('label', 'Cats')).to.be.true;
   });
 
-  it('should set checked to null when the value does not contain the checkbox value', () => {
+  it('should set checked to false when the value does not contain the checkbox value', () => {
     const group = $(render(<CheckboxGroup name="pets" options={options}/>).element);
     expect(group.find(Checkbox).first().hasProp('checked', null)).to.be.true;
     expect(group.find(Checkbox).last().hasProp('checked', null)).to.be.true;
@@ -48,16 +48,6 @@ describe('CheckboxGroup', () => {
 
   it('should not set checked when the value does not contain the checkbox value', () => {
     const group = $(render(<CheckboxGroup name="pets" options={options} value={['dogs']}/>).element);
-    expect(group.find(Checkbox).last().hasProp('checked', false)).to.be.true;
-  });
-
-  it('should set checked when the defaultValue contains the checkbox value', () => {
-    const group = $(render(<CheckboxGroup name="pets" options={options} defaultValue={['dogs']}/>).element);
-    expect(group.find(Checkbox).first().hasProp('checked', true)).to.be.true;
-  });
-
-  it('should not set checked when the defaultValue contains the checkbox value', () => {
-    const group = $(render(<CheckboxGroup name="pets" options={options} defaultValue={['dogs']}/>).element);
     expect(group.find(Checkbox).last().hasProp('checked', false)).to.be.true;
   });
 

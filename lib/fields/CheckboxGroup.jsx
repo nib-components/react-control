@@ -8,7 +8,7 @@ import CheckboxInput from './Checkbox';
  * @returns {ReactElement}
  */
 export default function CheckboxGroup(props) {
-  const {className, name, value, defaultValue, options, ...otherProps} = props;
+  const {className, name, value, options, ...otherProps} = props;
 
   const checkboxGroupClassNames = classNames('checkbox-group', {
     'checkbox-group--disabled': props.disabled
@@ -17,14 +17,7 @@ export default function CheckboxGroup(props) {
   return (
     <div className={checkboxGroupClassNames}>
       {Object.keys(options).map(option => {
-
-        let checked = null;
-        if (typeof value !== 'undefined') {
-          checked = value.indexOf(option) !== -1;
-        } else if (typeof defaultValue !== 'undefined') {
-          checked = defaultValue.indexOf(option) !== -1;
-        }
-
+        const checked = value && value.indexOf(option) !== -1;
         return (
           <CheckboxInput
             {...otherProps}

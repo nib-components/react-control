@@ -139,6 +139,10 @@ A horizontal rule.
 
 ## Change log
 
+### 0.17.0
+
+- break: removed `defaultValue` prop from `RadioGroup` and `CheckboxGroup`
+
 ### 0.16.1
 
 - fix: forgot to import `classnames`

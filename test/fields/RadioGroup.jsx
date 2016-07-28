@@ -35,10 +35,10 @@ describe('RadioGroup', () => {
     expect(group.find(Radio).last().hasProp('label', 'Female')).to.be.true;
   });
 
-  it('should set checked to null when the value is not set', () => {
+  it('should set checked to false when the value is not set', () => {
     const group = $(render(<RadioGroup name="gender" options={options}/>).element);
-    expect(group.find(Radio).first().hasProp('checked', null)).to.be.true;
-    expect(group.find(Radio).last().hasProp('checked', null)).to.be.true;
+    expect(group.find(Radio).first().prop('checked')).to.be.false;
+    expect(group.find(Radio).last().prop('checked')).to.be.false;
   });
 
   it('should set checked when the value is the same as the radio value', () => {
@@ -48,16 +48,6 @@ describe('RadioGroup', () => {
 
   it('should not set checked when the value is not the same as the radio value', () => {
     const group = $(render(<RadioGroup name="gender" options={options} value="male"/>).element);
-    expect(group.find(Radio).last().hasProp('checked', false)).to.be.true;
-  });
-
-  it('should set checked when the defaultValue is the same as the radio value', () => {
-    const group = $(render(<RadioGroup name="gender" options={options} defaultValue="male"/>).element);
-    expect(group.find(Radio).first().hasProp('checked', true)).to.be.true;
-  });
-
-  it('should not set checked when the defaultValue is not the same as the radio value', () => {
-    const group = $(render(<RadioGroup name="gender" options={options} defaultValue="male"/>).element);
     expect(group.find(Radio).last().hasProp('checked', false)).to.be.true;
   });
 
