@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import Control from './Control';
+import Divider from './Divider';
 
 export default class Form extends React.Component {
 
@@ -17,12 +18,12 @@ export default class Form extends React.Component {
   }
 
   renderTitle(title) {
-    return title && <h3 className="form__title">{title}</h3>;
+    return title ? <h3 className="form__title">{title}</h3> : null;
   }
 
   renderChildren(children) {
     return React.Children.map(children, function(child) {
-      if (React.isValidElement(child) && child.type === Control) {
+      if (React.isValidElement(child) && (child.type === Control || child.type === Divider)) {
         return <div className="form__control">{child}</div>;
       } else {
         return child;
@@ -52,8 +53,8 @@ export default class Form extends React.Component {
 Form.propTypes = {
   theme: React.PropTypes.oneOf(['white', 'grey', 'green']),
   title: React.PropTypes.string,
-  onSubmit: React.PropTypes.func,
-  className: React.PropTypes.string
+  className: React.PropTypes.string,
+  onSubmit: React.PropTypes.func
 };
 
 Form.defaultProps = {

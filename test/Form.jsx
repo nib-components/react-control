@@ -1,9 +1,11 @@
 import Form from '../lib/Form';
 import Control from '../lib/Control';
+import Divider from '../lib/Divider';
 
 describe('Form', () => {
 
   describe('.handleSubmit()', () => {
+
     it('should prevent the default event by default', () => {
       const event = { preventDefault: sinon.spy() };
       const rendered = render(<Form></Form>).component;
@@ -25,6 +27,7 @@ describe('Form', () => {
       rendered.handleSubmit(event);
       expect(onSubmit).to.be.calledOnce;
     });
+
   });
 
   describe('.render()', () => {
@@ -67,6 +70,11 @@ describe('Form', () => {
     it('should wrap Control components', () => {
       const form = $(render(<Form><Control><input/></Control></Form>).element);
       expect(form.find('.form__control').find(Control).length).to.be.equal(1);
+    });
+
+    it('should wrap Divider components', () => {
+      const form = $(render(<Form><Divider/></Form>).element);
+      expect(form.find('.form__control').find(Divider).length).to.be.equal(1);
     });
 
     it('should pass through action', () => {

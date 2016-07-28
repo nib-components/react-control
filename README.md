@@ -139,6 +139,11 @@ A horizontal rule.
 
 ## Change log
 
+### 0.15.0
+
+- break: wrap `Form.Divider` components in a `<div className="form__control"/>` because the element's margin was removed in `@nib-styles/react-form@0.8.0`
+- fix: update the class name used by `Form.Divider` because it was changed in `@nib-styles/react-form@0.8.0`
+
 ### 0.14.2
 
 - fix: no longer require a `name` prop on a `Control`
