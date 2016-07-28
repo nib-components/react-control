@@ -117,13 +117,10 @@ A horizontal rule.
 
 ## Change log
 
-### 0.18.0
-
-- potential break: moved `Radio` and `RadioGroup` implementation to `@nib-components/radio` and `@nib-components/radio-group`
-
 ### 0.17.0
 
 - break: removed `defaultValue` prop from `RadioGroup` and `CheckboxGroup`
+- moved `Radio` and `RadioGroup` implementation to `@nib-components/radio` and `@nib-components/radio-group`
 
 ### 0.16.1
 
