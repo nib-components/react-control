@@ -1,9 +1,12 @@
 import React from 'react';
 
-export default class Divider extends React.Component {
-
-  render() {
-    return <hr className="divider" />;
-  }
-
+export default function Divider(props) {
+  const {className, ...otherProps} = props;
+  return (
+    <hr {...otherProps} className={classNames(className, 'divider')} />
+  );
 }
+
+Divider.propTypes = {
+  className: React.PropTypes.string
+};

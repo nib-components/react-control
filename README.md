@@ -127,7 +127,7 @@ A select box.
 #### Props
 
 - label - Text displayed on the button *(required)*
-- glyph - from v2-icons. Dfaults to `chevron-circle-inverse`
+- glyph - from v2-icons. Defaults to `chevron-circle-inverse`
 
 ### Divider
 
@@ -138,6 +138,11 @@ A horizontal rule.
 ```
 
 ## Change log
+
+### 0.16.0
+
+- add: allow custom classname to be set on `Form.Control`
+- add: allow custom classname and custom props to be set on `Form.Divider`
 
 ### 0.15.0
 

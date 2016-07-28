@@ -11,7 +11,7 @@ export default class Control extends React.Component {
 
   render() {
     const {
-      label, help, error, valid, validated, children,
+      label, help, error, valid, validated, className, children,
 
       //redux-formo methods
       initialise, focus, blur, change, filter, validate, //eslint-disable-line
@@ -22,7 +22,7 @@ export default class Control extends React.Component {
       ...otherProps
     } = this.props;
 
-    const controlClasses = classNames('control', {
+    const controlClasses = classNames(className, 'control', {
       [`control--${this.props.name}`]: this.props.name,
       'control--disabled': this.props.disabled,
       'control--valid': validated && valid,
@@ -95,6 +95,7 @@ Control.propTypes = {
   valid: React.PropTypes.bool,
   validated: React.PropTypes.bool,
   disabled: React.PropTypes.bool,
+  className: React.PropTypes.string,
   children: React.PropTypes.element.isRequired
 };
 

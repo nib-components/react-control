@@ -10,6 +10,19 @@ describe('Control', () => {
 
     describe('=> control', () => {
 
+      it('should have a `foobar` class when a custom className is provided', () => {
+
+        const element = render(
+          <Control className="foobar">
+            <input/>
+          </Control>
+        ).element;
+
+        expect($(element).hasClass('foobar')).to.be.true;
+
+      });
+
+
       it('should have a `control--%name%` class when a name is provided', () => {
 
         const element = render(
