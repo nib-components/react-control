@@ -139,6 +139,10 @@ A horizontal rule.
 
 ## Change log
 
+### 0.16.1
+
+- fix: forgot to import `classnames`
+
 ### 0.16.0
 
 - add: allow custom classname to be set on `Form.Control`

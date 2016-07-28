@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 
 export default function Divider(props) {
   const {className, ...otherProps} = props;
