@@ -3,6 +3,8 @@
   "version": "0.16.1",
   "main": "./dist/index.js",
   "dependencies": {
+    "@nib-components/radio": "^0.1.0",
+    "@nib-components/radio-group": "^0.1.0",
     "classnames": "^2.2.0",
     "react-addons-css-transition-group": "^15.1.0"
   },

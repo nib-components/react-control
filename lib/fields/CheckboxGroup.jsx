@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import CheckboxInput from './Checkbox';
+import Checkbox from './Checkbox';
 
 /**
  * Render a group of checkbox inputs
@@ -8,7 +8,7 @@ import CheckboxInput from './Checkbox';
  * @returns {ReactElement}
  */
 export default function CheckboxGroup(props) {
-  const {className, name, value, options, ...otherProps} = props;
+  const {name, value, options, className, component: Component, ...otherProps} = props;
 
   const checkboxGroupClassNames = classNames('checkbox-group', {
     'checkbox-group--disabled': props.disabled
@@ -19,24 +19,30 @@ export default function CheckboxGroup(props) {
       {Object.keys(options).map(option => {
         const checked = value && value.indexOf(option) !== -1;
         return (
-          <CheckboxInput
+          <Component
             {...otherProps}
             key={option}
             name={name} value={option} checked={checked}
             label={options[option]}
           />
         );
-
       })}
     </div>
   );
 }
 
 CheckboxGroup.propTypes = {
-  className: React.PropTypes.string,
   name: React.PropTypes.string.isRequired,
   options: React.PropTypes.object.isRequired,
   value: React.PropTypes.array,
-  defaultValue: React.PropTypes.array,
-  disabled: React.PropTypes.bool
+  disabled: React.PropTypes.bool,
+  className: React.PropTypes.string,
+  component: React.PropTypes.oneOfType([
+    React.PropTypes.string,
+    React.PropTypes.func
+  ])
+};
+
+CheckboxGroup.defaultProps = {
+  component: Checkbox
 };

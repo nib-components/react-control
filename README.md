@@ -97,37 +97,15 @@ A select box.
 
 ### Radio
 
-```
-<Form.Radio name="gender" value="female" label="Female"></Form.Radio>
-```
-
-#### Props
-
-- name - Unique name of radio *(required)*
-- value - Value of radio option *(required)*
-- label - Describing the option *(required)*
+See `@nib-components/radio`.
 
 ### RadioGroup
 
-```
-<Form.RadioGroup name="gender" options={female: 'Female', male: 'Male'}></Form.RadioGroup>
-```
-
-#### Props
-
-- name - A unique name *(required)*
-- options - An object of `value: "Displayed Text"` pairs *(required)*
+See `@nib-components/radio-group`.
 
 ### Button
 
-```
-<Form.Button label="Submit" glyph="heart"></Form.Button>
-```
-
-#### Props
-
-- label - Text displayed on the button *(required)*
-- glyph - from v2-icons. Defaults to `chevron-circle-inverse`
+See `@nib-components/button`.
 
 ### Divider
 
@@ -138,6 +116,10 @@ A horizontal rule.
 ```
 
 ## Change log
+
+### 0.18.0
+
+- potential break: moved `Radio` and `RadioGroup` implementation to `@nib-components/radio` and `@nib-components/radio-group`
 
 ### 0.17.0
 
