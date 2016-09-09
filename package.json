@@ -1,6 +1,6 @@
 {
   "name": "@nib-components/react-form",
-  "version": "0.17.0",
+  "version": "0.18.0",
   "main": "./dist/index.js",
   "dependencies": {
     "@nib-components/radio": "^0.1.0",
