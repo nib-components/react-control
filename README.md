@@ -1,3 +1,18 @@
+# Deprecated!
+Please use the following:
+
+- @nib-components/form
+- @nib-components/form-control
+- @nib-components/textbox
+- @nib-components/textarea
+- @nib-components/password-textbox
+- @nib-components/select
+- @nib-components/checkbox
+- @nib-components/checkbox-group
+- @nib-components/radio
+- @nib-components/radio-group
+- @nib-components/divider
+
 # @nib-components/react-form
 
 [![Build Status](https://travis-ci.org/nib-components/react-form.svg?branch=master)](https://travis-ci.org/nib-components/react-form)
